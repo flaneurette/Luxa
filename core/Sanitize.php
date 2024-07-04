@@ -220,18 +220,6 @@ class Sanitizer {
 		
 		switch($method) {
 			
-			case 'product-description':
-
-			$returnstring = $this->sanitize($string,'encode');
-			$returnstring = substr($returnstring,0,512);
-			
-			$find = ['\n','\r','\t'];
-			$replace = ['<br />','<br />','&emsp;'];
-			$returnstring = str_ireplace($find,$replace,htmlspecialchars($returnstring, ENT_QUOTES, 'UTF-8'));
-			return nl2br($returnstring);
-		
-			break;
-			
 			default:
 			$returnstring = $this->sanitize($string,'encode');
 			$returnstring = substr($returnstring,0,512);

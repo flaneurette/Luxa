@@ -12,16 +12,10 @@
 	session_start(); 
 	session_regenerate_id();
 
-	include("resources/PHP/Class.ImageSanitize.php");
 	include("resources/PHP/Class.DB.php");
 	include("core/Cryptography.php");
-	include("core/JSON.Converter.php");
-	include("core/StoreData.php");
 	
-	$cryptography 		= new Cryptography;
-	$sanitizer 	  		= new Sanitizer;
-	$converter 	  		= new Converter;
-	$storagecontainer 	= new StoreData;
+	$cryptography = new Cryptography;
 
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
@@ -93,7 +87,7 @@
 
 <div class="container">
 	<header class="header">
-	<h1>PLAIN UI.</h1>
+	<h1><a href="../../index.php">PLAIN UI</a></h1>
 	<ul class="navigate">
 	<li><a href="../../pages/">View pages</a></li>
 	<li><a href="../../pages/add/">Add page</a></li>

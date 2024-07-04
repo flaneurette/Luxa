@@ -303,6 +303,7 @@ hr {
 
 	.header h1 {
 		padding-left: 0px;
+		margin-left: 10px;
 	}
 
 	ul.navigate {
@@ -352,4 +353,10 @@ hr {
 	.textarea {
 		display:none;
 	}
-	
+	.textresult {
+		margin-left:  var(--spacing-xlarge);
+		margin-top:  var(--spacing-xlarge);
+		min-width: 100%;
+		height: 50vh;
+		border: 1px solid var(--lightgrey);
+	}
