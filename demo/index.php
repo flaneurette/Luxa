@@ -16,7 +16,7 @@
 		 <h1>{{snippet_title}}</h1>
 		 <p>{{snippet_text}}</p>
 	 </div>
-    </ul>
+    </div>
   </div>
 </div>
 	
