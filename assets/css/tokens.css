@@ -360,3 +360,22 @@ hr {
 		height: 50vh;
 		border: 1px solid var(--lightgrey);
 	}
+	fieldset {
+		display: inline-block;
+		clear:both;	
+	}
+	
+	.loginform {
+		margin:  var(--spacing-xlarge);	
+	}
+	.loginform input {
+		display: block;
+		clear:both;
+		padding: 5px;
+	}	
+	.loginform input[type="submit"] {
+		margin-top:  var(--spacing-xlarge);
+	}
+	table {
+		margin:  var(--spacing-xlarge);	
+	}
