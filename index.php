@@ -1,17 +1,19 @@
 <?php
-	ini_set('max_file_uploads', 30);
 	
 	header("X-Frame-Options: DENY"); 
 	header("X-XSS-Protection: 1; mode=block"); 
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
 	
-	//error_reporting(E_ALL);
-	
 	set_time_limit(0); 
 	session_start(); 
 	session_regenerate_id();
-
+	// login check
+	if(isset($_SESSION['loggedin']) != '1') {
+		header("Location: login/");
+		exit;
+	} 
+	
 	include("resources/PHP/Class.DB.php");
 	include("core/Cryptography.php");
 	
@@ -23,6 +25,7 @@
 			$token = $cryptography->getToken();
 			$_SESSION['token'] = $token;
 	}
+	
 	
 	$_SESSION['admin-uuid'] = $cryptography->uniqueID();
 	
@@ -48,7 +51,6 @@
 
 	$db = new sql();
 	$result = $db->query("SELECT * FROM snippets");
-	
 ?>
 <!DOCTYPE html>
 <html>

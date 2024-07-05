@@ -1,11 +1,3 @@
-AuthType Basic
-AuthName "Administration"
-AuthUserFile C:/xampp/htdocs/CMS/.htpasswd
-Require valid-user
-Order Deny,Allow
-Deny from all
-Allow from ::1
-
 # Options All -Indexes
 Options +FollowSymLinks
 
@@ -15,12 +7,13 @@ RewriteEngine On
 RewriteCond %{HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
-RewriteRule ^pages/$ Pages.php [NC,L]
-RewriteRule ^pages/add/$ AddPage.php [NC,L]
-RewriteRule ^snippets/add/$ AddSnippets.php [NC,L]
-RewriteRule ^resources/add/$ AddResource.php [NC,L]
-RewriteRule ^pages/edit/([0-9]+)/$ EditPages.php?pid=$1 [NC,L]
-RewriteRule ^snippets/edit/([0-9]+)/$ EditSnippets.php?pid=$1 [NC,L]
-RewriteRule ^resources/edit/([0-9]+)/$ EditResource.php [NC,L]
+RewriteRule ^login/$ core/Login.php [NC,L]
+RewriteRule ^pages/$ core/Pages.php [NC,L]
+RewriteRule ^pages/add/$ core/AddPage.php [NC,L]
+RewriteRule ^snippets/add/$ core/AddSnippets.php [NC,L]
+RewriteRule ^resources/add/$ core/AddResource.php [NC,L]
+RewriteRule ^pages/edit/([0-9]+)/$ core/EditPages.php?pid=$1 [NC,L]
+RewriteRule ^snippets/edit/([0-9]+)/$ core/EditSnippets.php?pid=$1 [NC,L]
+RewriteRule ^resources/edit/([0-9]+)/$ core/EditResource.php [NC,L]
 	
 	
