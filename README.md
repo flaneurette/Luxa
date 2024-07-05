@@ -36,10 +36,11 @@ Which can then be accessed:
  <p>{{blogTitle}}</p>
   <div>
     <div :loop="blogs">
-<div>
-<h1>{{snippet_title}}</h1>
-<p>{{snippet_text}}</p>
-</div>
+	<div>
+		<h1>{{snippet_title}}</h1>
+		<p>{{snippet_text}}</p>
+	</div>
     </ul>
   </div>
-</div>```
+</div>
+```
