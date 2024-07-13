@@ -116,6 +116,7 @@
 	<li><a href="../../../pages/">View pages</a></li>
 	<li><a href="../../../pages/add/">Add page</a></li>
 	<li><a href="../../../snippets/add/">Add snippet</a></li>
+	<li><a href="../../../resources/">Resources</a></li>
 	</ul>
 	</header>
 	<nav class="nav">

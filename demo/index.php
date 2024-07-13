@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
   <title>UX HTTP</title>
 <script src="UX.js"></script>
 </head>
 <body>
+
 <div id="app">
 <h1>UX DEMO</h1>
  <p>{{blogTitle}}</p>
@@ -14,7 +16,7 @@
 		 <h1>{{snippet_title}}</h1>
 		 <p>{{snippet_text}}</p>
 	 </div>
-    </div>
+    </ul>
   </div>
 </div>
 	

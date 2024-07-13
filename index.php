@@ -44,10 +44,6 @@
 	} else {
 		$token = $_SESSION['uuid'];
 	}
-	
-	if(isset($_REQUEST['pid'])) { 
-		$pageid = (int)$_REQUEST['pid'];
-	}
 
 	$db = new sql();
 	$result = $db->query("SELECT * FROM snippets");
@@ -74,10 +70,7 @@
 	<li><a href="pages/">View pages</a></li>
 	<li><a href="pages/add/">Add page</a></li>
 	<li><a href="snippets/add/">Add snippet</a></li>
-	<!-- <li><a href="resources/add/">Add resource</a></li>
-	<li><a href="pages/edit/">Edit pages</a></li>
-	<li><a href="snippets/edit/">Edit snippets</a></li>
-	<li><a href="resources/edit/">Edit resources</a></li> -->
+	<li><a href="resources/">Resources</a></li>
 	</ul>
 	</header>
 	<nav class="nav">

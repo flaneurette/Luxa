@@ -90,6 +90,7 @@
 	<li><a href="../../pages/">View pages</a></li>
 	<li><a href="../../pages/add/">Add page</a></li>
 	<li><a href="../../snippets/add/">Add snippet</a></li>
+	<li><a href="../../resources/">Resources</a></li>
 	</ul>
 	</header>
 	<form name="post" action="" method="POST" id="form" autocomplete="off" data-lpignore="true" enctype="multipart/form-data">
