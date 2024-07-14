@@ -15,7 +15,7 @@ It could be used with a JavaScript framework like VUE.js, React or UX.js, which 
 https://github.com/flaneurette/UX.js
 
 # Requirements
-PHP, MYSQL
+PHP, MYSQL, mod_rewrite
 
 # DEMO with UX.js
 With UX.js, the following code will fetch all JSON data from the API:
