@@ -14,6 +14,9 @@ Plain UI is a simple yet modern headless CMS, which outputs JSON data through an
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
 https://github.com/flaneurette/UX.js
 
+# Requirements
+PHP, MYSQL
+
 # DEMO with UX.js
 With UX.js, the following code will fetch all JSON data from the API:
 
