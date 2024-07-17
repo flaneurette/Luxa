@@ -39,7 +39,8 @@
 		$token = $_SESSION['uuid'];
 	}
 	
-	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
+	
+	if($_POST['csrf'] === $_SESSION['uuid']) {
 		
 		if(isset($_REQUEST['username']) && !empty($_REQUEST['password'])) {
 			
@@ -86,7 +87,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../assets/css/tokens.css" />
+	<link rel="stylesheet" href="<?php echo SITE;?>assets/css/tokens.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -96,7 +97,7 @@
 
 <div class="container">
 	<header class="header">
-	<h1><a href="index.php">PLAIN UI</a></h1>
+	<h1><a href="<?php echo SITE;?>index.php">PLAIN UI</a></h1>
 	<ul class="navigate">
 	</ul>
 	</header>

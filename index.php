@@ -22,8 +22,8 @@
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
 	} else {
-			$token = $cryptography->getToken();
-			$_SESSION['token'] = $token;
+		$token = $cryptography->getToken();
+		$_SESSION['token'] = $token;
 	}
 	
 	

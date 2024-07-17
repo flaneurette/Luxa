@@ -49,7 +49,7 @@
 	}
 	
 	if(isset($_POST)) {
-		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
+		if($_POST['csrf'] === $_SESSION['uuid']) {
 			
 			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])) {
 				// insert component
@@ -82,7 +82,7 @@
 
 <div class="container">
 	<header class="header">
-	<h1><a href="../../index.php">PLAIN UI</a></h1>
+	<h1><a href="<?php echo SITE;?>index.php">PLAIN UI</a></h1>
 	<ul class="navigate">
 	<li><a href="<?php echo SITE;?>pages/">View pages</a></li>
 	<li><a href="<?php echo SITE;?>pages/add/">Add page</a></li>

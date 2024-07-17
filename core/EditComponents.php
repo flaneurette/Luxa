@@ -54,7 +54,7 @@
 	}
 	
 	if(isset($_POST)) {
-		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
+		if($_POST['csrf'] === $_SESSION['uuid']) {
 			// update components.
 			if(isset($_POST['count'])) { 
 				$len = $_POST['count'];
