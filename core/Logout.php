@@ -14,11 +14,10 @@
 		exit;
 	}
 	
-	if(isset($_REQUEST['csrf'])) {
-		if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
-			echo 'Token is incorrect.';
-			exit;
-		}
+
+	if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
+		echo 'Token is incorrect.';
+		exit;
 	}
 	
 	$_SESSION['uuid'] = NULL;
@@ -27,6 +26,6 @@
 	$_SESSION['loggedin'] = NULL;
 	session_regenerate_id();
 	
-	header("Location: ../index.php");
+	header("Location: ../../index.php");
 	exit;
 ?>
