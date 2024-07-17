@@ -39,11 +39,7 @@
 		$token = $_SESSION['uuid'];
 	}
 	
-	if(isset($_REQUEST['csrf'])) {
-		if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
-			echo 'Token is incorrect.';
-			exit;
-		}
+	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
 		
 		if(isset($_REQUEST['username']) && !empty($_REQUEST['password'])) {
 			
@@ -91,13 +87,6 @@
 	<header class="header">
 	<h1><a href="index.php">PLAIN UI</a></h1>
 	<ul class="navigate">
-	<li><a href="pages/">View pages</a></li>
-	<li><a href="pages/add/">Add page</a></li>
-	<li><a href="components/add/">Add component</a></li>
-	<!-- <li><a href="resources/add/">Add resource</a></li>
-	<li><a href="pages/edit/">Edit pages</a></li>
-	<li><a href="components/edit/">Edit components</a></li>
-	<li><a href="resources/edit/">Edit resources</a></li> -->
 	</ul>
 	</header>
 	<nav class="nav">
