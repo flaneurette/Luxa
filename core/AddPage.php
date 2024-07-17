@@ -56,11 +56,11 @@
 		
 		if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])) {
 			$db = new sql();
-			// insert snippet.
-			$snippet_title_vars = $_REQUEST['page'];
+			// insert component
+			$component_title_vars = $_REQUEST['page'];
 			$table    = 'pages';
 			$columns  = ['page_name','sub'];
-			$values   = [$snippet_title_vars,0];
+			$values   = [$component_title_vars,0];
 			$db->insert($table,$columns,$values);
 		}
 	}
@@ -89,7 +89,7 @@
 	<ul class="navigate">
 	<li><a href="../../pages/">View pages</a></li>
 	<li><a href="../../pages/add/">Add page</a></li>
-	<li><a href="../../snippets/add/">Add snippet</a></li>
+	<li><a href="../../components/add/">Add component</a></li>
 	<li><a href="../../resources/">Resources</a></li>
 	</ul>
 	</header>

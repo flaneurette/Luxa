@@ -82,7 +82,7 @@
 	<ul class="navigate">
 	<li><a href="<?php echo SITE;?>pages/">View pages</a></li>
 	<li><a href="<?php echo SITE;?>pages/add/">Add page</a></li>
-	<li><a href="<?php echo SITE;?>snippets/add/">Add snippet</a></li>
+	<li><a href="<?php echo SITE;?>components/add/">Add component</a></li>
 	<li><a href="<?php echo SITE;?>resources/">Resources</a></li>
 	</ul>
 	</header>
@@ -95,7 +95,7 @@
 	for($i=0;$i<count($result);$i++){
 	?>
 		<tr>
-		<td><a href="<?php echo SITE;?>snippets/edit/<?php echo $result[$i]['id'];?>/"><?php echo $result[$i]['page_name'];?></a></td>
+		<td><a href="<?php echo SITE;?>components/edit/<?php echo $result[$i]['id'];?>/"><?php echo $result[$i]['page_name'];?></a></td>
 		<td> <a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $result[$i]['id'];?>">API</a></td>
 		<td><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo (int)$result[$i]['id'];?>/">delete</a></td>
 		</tr>

@@ -46,7 +46,7 @@
 	}
 
 	$db = new sql();
-	$result = $db->query("SELECT * FROM snippets");
+	$result = $db->query("SELECT * FROM components");
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,7 +69,7 @@
 	<ul class="navigate">
 	<li><a href="pages/">View pages</a></li>
 	<li><a href="pages/add/">Add page</a></li>
-	<li><a href="snippets/add/">Add snippet</a></li>
+	<li><a href="components/add/">Add component</a></li>
 	<li><a href="resources/">Resources</a></li>
 	</ul>
 	</header>

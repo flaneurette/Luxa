@@ -15,13 +15,13 @@
 		
 	if(isset($_REQUEST['id'])) { 
 		$pageid = (int)$_REQUEST['id'];
-		$table    = 'snippets';
+		$table    = 'components';
 		$column   = 'pid';
 		$value    =  $pageid;
 		$operator = '*';
 		$result = $db->select($table,$operator,$column,$value);
 		} else {
-		$result = $db->query("SELECT * from snippets ORDER BY id DESC");
+		$result = $db->query("SELECT * from components ORDER BY id DESC");
 	}
 
 echo json_encode($result,JSON_PRETTY_PRINT);

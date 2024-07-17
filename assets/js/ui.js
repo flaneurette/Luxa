@@ -4,7 +4,7 @@ var plainui = {
 		
 		let c = document.getElementById('count').value;
 		for(let i=0; i < c; i++) {
-			this.proc('texteditor-' + i,'snippet_text_' + i);
+			this.proc('texteditor-' + i,'component_text_' + i);
 		}
 		
 		document.getElementById('form').submit();

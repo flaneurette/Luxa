@@ -95,10 +95,10 @@
 	<ul class="navigate">
 	<li><a href="pages/">View pages</a></li>
 	<li><a href="pages/add/">Add page</a></li>
-	<li><a href="snippets/add/">Add snippet</a></li>
+	<li><a href="components/add/">Add component</a></li>
 	<!-- <li><a href="resources/add/">Add resource</a></li>
 	<li><a href="pages/edit/">Edit pages</a></li>
-	<li><a href="snippets/edit/">Edit snippets</a></li>
+	<li><a href="components/edit/">Edit components</a></li>
 	<li><a href="resources/edit/">Edit resources</a></li> -->
 	</ul>
 	</header>
