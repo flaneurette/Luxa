@@ -53,7 +53,7 @@
 		exit;
 	}
 	
-	if(isset($_POST)) {
+	if(isset($_POST['csrf'])) {
 		if($_POST['csrf'] === $_SESSION['uuid']) {
 			// update components.
 			if(isset($_POST['count'])) { 

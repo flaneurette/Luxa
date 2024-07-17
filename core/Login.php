@@ -39,42 +39,43 @@
 		$token = $_SESSION['uuid'];
 	}
 	
-	
-	if($_POST['csrf'] === $_SESSION['uuid']) {
+	if(isset($_POST['csrf'])) {
+		if($_POST['csrf'] === $_SESSION['uuid']) {
+			
+			if(isset($_REQUEST['username']) && !empty($_REQUEST['password'])) {
+				
+				$username = $db->clean($_POST["username"],'encode');
+				$password = $db->clean($_POST["password"],'encode');
 		
-		if(isset($_REQUEST['username']) && !empty($_REQUEST['password'])) {
-			
-			$username = $db->clean($_POST["username"],'encode');
-			$password = $db->clean($_POST["password"],'encode');
-	
-			$userprofile = [];
-			$result = [];
-			
-			$table    = 'users';
-			$column   = 'username';
-			$value    =  $username;
-			$operator = '*';
-
-			$result = $db->select($table,$operator,$column,$value); 
-
-			if($result[0]['attempts'] >= MAX_LOGIN_ATTEMPTS) {
-				echo 'You have reached the maximum login attempts, please contact your database administrator to lift restriction.';
-				exit;
-			}
+				$userprofile = [];
+				$result = [];
 				
-			if(count($result) >= 1 && password_verify($password, $result[0]['password'])) {
-				
-				$_SESSION['uid'] = $db->intcast($result[0]['id']);
-				$_SESSION['profile'] = $result[0];
-				$_SESSION['loggedin'] = '1';
-				 header("Location: ../index.php");
-				 exit;
-				} else {
-				$id = 1;
 				$table    = 'users';
-				$columns  = ['attempts'];
-				$values   = [$result[0]['attempts'] + 1];
-				$db->update($table,$columns,$values,$id);
+				$column   = 'username';
+				$value    =  $username;
+				$operator = '*';
+
+				$result = $db->select($table,$operator,$column,$value); 
+
+				if($result[0]['attempts'] >= MAX_LOGIN_ATTEMPTS) {
+					echo 'You have reached the maximum login attempts, please contact your database administrator to lift restriction.';
+					exit;
+				}
+					
+				if(count($result) >= 1 && password_verify($password, $result[0]['password'])) {
+					
+					$_SESSION['uid'] = $db->intcast($result[0]['id']);
+					$_SESSION['profile'] = $result[0];
+					$_SESSION['loggedin'] = '1';
+					 header("Location: ../index.php");
+					 exit;
+					} else {
+					$id = 1;
+					$table    = 'users';
+					$columns  = ['attempts'];
+					$values   = [$result[0]['attempts'] + 1];
+					$db->update($table,$columns,$values,$id);
+				}
 			}
 		}
 	}

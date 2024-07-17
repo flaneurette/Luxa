@@ -48,11 +48,9 @@
 		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
-	if(isset($_POST)) {
+	if(isset($_POST['csrf'])) {
 		if($_POST['csrf'] === $_SESSION['uuid']) {
-			
 			if(isset($_POST['component_title']) && !empty($_POST['component_title'])) {
-			
 				// insert snippet.
 				$id = $db->intcast($_POST['pageid']);
 				$component_title_vars = $_POST['component_title'];

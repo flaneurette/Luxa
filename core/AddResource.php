@@ -50,7 +50,7 @@
 		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
-	if(isset($_POST)) {
+	if(isset($_POST['csrf'])) {
 		if($_POST['csrf'] === $_SESSION['uuid']) {
 
 				if(isset($_FILES['resource']) && !empty($_FILES['resource'])) {
