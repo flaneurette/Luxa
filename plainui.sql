@@ -44,10 +44,8 @@ INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`) VALU
 (6, 2, 'We are X, Y Z!', 'We are X, Y Z!'),
 (7, 3, 'Contact Us', 'By e-mail, telephone or SMS...'),
 (10, 6, 'Test', 'Test...'),
-(11, 6, 'What a beautiful day...', 'It really is a beautiful day'),
 (12, 3, 'Test', 'Test'),
-(13, 1, 'Title', 'Text...'),
-(14, 1, 'Titleasd', 'Text...asdasd');
+(13, 1, 'Title', 'Text...');
 
 -- --------------------------------------------------------
 
