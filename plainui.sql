@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2024 at 06:38 PM
+-- Generation Time: Jul 17, 2024 at 08:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,7 +46,8 @@ INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`) VALU
 (10, 6, 'Test', 'Test...'),
 (11, 6, 'What a beautiful day...', 'It really is a beautiful day'),
 (12, 3, 'Test', 'Test'),
-(13, 1, 'Title', 'Text...');
+(13, 1, 'Title', 'Text...'),
+(14, 1, 'Titleasd', 'Text...asdasd');
 
 -- --------------------------------------------------------
 
@@ -79,15 +80,16 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` int(11) NOT NULL
+  `role` int(11) NOT NULL,
+  `attempts` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'admin', '$2y$10$96G5L2swhAb4OOSyramgd.CE/BTsYkcNrWrjSBsvopk9.WmmyZ84m', 1);
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `attempts`) VALUES
+(1, 'admin', '$2y$10$96G5L2swhAb4OOSyramgd.CE/BTsYkcNrWrjSBsvopk9.WmmyZ84m', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -119,7 +121,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pages`
