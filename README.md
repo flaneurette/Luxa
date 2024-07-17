@@ -20,7 +20,7 @@ https://github.com/flaneurette/UX.js
 # DEMO with UX.js
 With UX.js, the following code will fetch all JSON data from the API:
 
-<script>
+	<script>
 	let app = new UX();
 	app.http('API.php', 'callback', mycall);
 	function mycall(dataset) {
@@ -31,7 +31,7 @@ With UX.js, the following code will fetch all JSON data from the API:
 			}
 		});
 	}
-</script>
+	</script>
 
 Which can then be accessed:
 ```
