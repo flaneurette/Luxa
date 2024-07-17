@@ -4,8 +4,7 @@
 	header("X-XSS-Protection: 1; mode=block"); 
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
-	
-	set_time_limit(0); 
+ 
 	session_start(); 
 	session_regenerate_id();
 	// login check
@@ -16,10 +15,10 @@
 
 	include("../resources/PHP/Class.DB.php");
 	include("Cryptography.php");
-	$db = new sql();
 	
 	$cryptography 		= new Cryptography;
-
+	$db = new sql();
+	
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
 	} else {
@@ -46,7 +45,7 @@
 	}
 	
 	if(isset($_REQUEST['pid'])) { 
-		$pageid = (int)$_REQUEST['pid'];
+		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
 	if(isset($_REQUEST['delete'])) {
@@ -95,9 +94,9 @@
 	for($i=0;$i<count($result);$i++){
 	?>
 		<tr>
-		<td><a href="<?php echo SITE;?>components/edit/<?php echo $result[$i]['id'];?>/"><?php echo $result[$i]['page_name'];?></a></td>
-		<td> <a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $result[$i]['id'];?>">API</a></td>
-		<td><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo (int)$result[$i]['id'];?>/">delete</a></td>
+		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['page_name'];?></a></td>
+		<td> <a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $db->intcast($result[$i]['id']);?>">API</a></td>
+		<td><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/">delete</a></td>
 		</tr>
 	
 	<?php

@@ -4,8 +4,7 @@
 	header("X-XSS-Protection: 1; mode=block"); 
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
-	
-	set_time_limit(0); 
+ 
 	session_start(); 
 	session_regenerate_id();
 	// login check
@@ -18,7 +17,8 @@
 	include("core/Cryptography.php");
 	
 	$cryptography = new Cryptography;
-
+	$db = new sql();
+	
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
 	} else {
@@ -45,7 +45,6 @@
 		$token = $_SESSION['uuid'];
 	}
 
-	$db = new sql();
 	$result = $db->query("SELECT * FROM components");
 ?>
 <!DOCTYPE html>

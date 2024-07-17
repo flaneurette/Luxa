@@ -4,10 +4,11 @@
 	header("X-XSS-Protection: 1; mode=block"); 
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
-
+	
 	set_time_limit(0); 
 	session_start(); 
 	session_regenerate_id();
+	
 	// login check
 	if(isset($_SESSION['loggedin']) != '1') {
 		header("Location: ../../../login/");
@@ -18,6 +19,7 @@
 	include("Cryptography.php");
 	
 	$cryptography = new Cryptography;
+	$db = new sql();
 
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
@@ -45,7 +47,7 @@
 	}
 	
 	if(isset($_REQUEST['pid'])) { 
-		$pageid = (int)$_REQUEST['pid'];
+		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
 	if(isset($_REQUEST['csrf'])) {

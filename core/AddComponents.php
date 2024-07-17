@@ -5,7 +5,6 @@
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
 
-	set_time_limit(0); 
 	session_start(); 
 	session_regenerate_id();	
 	// login check
@@ -18,6 +17,7 @@
 	include("Cryptography.php");
 	
 	$cryptography = new Cryptography;
+	$db = new sql();
 
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
@@ -45,10 +45,8 @@
 	}
 	
 	if(isset($_REQUEST['pid'])) { 
-		$pageid = (int)$_REQUEST['pid'];
+		$pageid = $db->intcast($_REQUEST['pid']);
 	}
-	
-	$db = new sql();
 	
 	if(isset($_REQUEST['csrf'])) {
 		if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
@@ -59,7 +57,7 @@
 		if(isset($_REQUEST['component_title']) && !empty($_REQUEST['component_title'])) {
 		
 			// insert snippet.
-			$id = (int) $_REQUEST['pageid'];
+			$id = $db->intcast($_REQUEST['pageid']);
 			$component_title_vars = $_REQUEST['component_title'];
 			$component_text_vars  = $_REQUEST['component_text'];
 			$table    = 'components';

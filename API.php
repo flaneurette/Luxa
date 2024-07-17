@@ -5,7 +5,6 @@
 	header("Strict-Transport-Security: max-age=30");
 	header("Referrer-Policy: same-origin");
 	
-	set_time_limit(0); 
 	session_start(); 
 	session_regenerate_id();
 
@@ -14,7 +13,7 @@
 	$db = new sql();
 		
 	if(isset($_REQUEST['id'])) { 
-		$pageid = (int)$_REQUEST['id'];
+		$pageid =  $db->intcast($_REQUEST['id']);
 		$table    = 'components';
 		$column   = 'pid';
 		$value    =  $pageid;
@@ -24,5 +23,5 @@
 		$result = $db->query("SELECT * from components ORDER BY id DESC");
 	}
 
-echo json_encode($result,JSON_PRETTY_PRINT);
+echo json_encode($result);
 ?>
