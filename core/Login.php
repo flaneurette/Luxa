@@ -54,10 +54,10 @@
 				$column   = 'username';
 				$value    =  $username;
 				$operator = '*';
-
 				$result = $db->select($table,$operator,$column,$value); 
-
-				if($result[0]['attempts'] >= MAX_LOGIN_ATTEMPTS) {
+				$result_attempt = $db->query('select * from users');
+			
+				if($result_attempt[0]['attempts'] >= MAX_LOGIN_ATTEMPTS) {
 					echo 'You have reached the maximum login attempts, please contact your database administrator to lift restriction.';
 					exit;
 				}
@@ -73,7 +73,7 @@
 					$id = 1;
 					$table    = 'users';
 					$columns  = ['attempts'];
-					$values   = [$result[0]['attempts'] + 1];
+					$values   = [$result_attempt[0]['attempts'] + 1];
 					$db->update($table,$columns,$values,$id);
 				}
 			}
