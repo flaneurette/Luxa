@@ -48,18 +48,20 @@
 		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
-	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
-		
-		if(isset($_REQUEST['component_title']) && !empty($_REQUEST['component_title'])) {
-		
-			// insert snippet.
-			$id = $db->intcast($_REQUEST['pageid']);
-			$component_title_vars = $_REQUEST['component_title'];
-			$component_text_vars  = $_REQUEST['component_text'];
-			$table    = 'components';
-			$columns  = ['pid','component_title','component_text'];
-			$values   = [$id,$component_title_vars,$component_text_vars];
-			$db->insert($table,$columns,$values);
+	if(isset($_POST)) {
+		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
+			
+			if(isset($_POST['component_title']) && !empty($_POST['component_title'])) {
+			
+				// insert snippet.
+				$id = $db->intcast($_POST['pageid']);
+				$component_title_vars = $_POST['component_title'];
+				$component_text_vars  = $_POST['component_text'];
+				$table    = 'components';
+				$columns  = ['pid','component_title','component_text'];
+				$values   = [$id,$component_title_vars,$component_text_vars];
+				$db->insert($table,$columns,$values);
+			}
 		}
 	}
 	

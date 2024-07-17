@@ -50,17 +50,19 @@
 		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
-	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
+	if(isset($_POST)) {
+		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
 
-			if(isset($_FILES['resource']) && !empty($_FILES['resource'])) {
-				foreach ($_FILES["resource"]["error"] as $key => $error) {
-					if ($error == UPLOAD_ERR_OK) {
-						$tmp_name = $_FILES["resource"]["tmp_name"][$key];
-						$name = basename($_FILES["resource"]["name"][$key]);
-						move_uploaded_file($tmp_name, UPLOAD_DIR. "/$name");
+				if(isset($_FILES['resource']) && !empty($_FILES['resource'])) {
+					foreach ($_FILES["resource"]["error"] as $key => $error) {
+						if ($error == UPLOAD_ERR_OK) {
+							$tmp_name = $_FILES["resource"]["tmp_name"][$key];
+							$name = basename($_FILES["resource"]["name"][$key]);
+							move_uploaded_file($tmp_name, UPLOAD_DIR. "/$name");
+						}
 					}
 				}
-			}
+		}
 	}
 ?>
 <!DOCTYPE html>

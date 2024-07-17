@@ -48,15 +48,17 @@
 		$pageid = $db->intcast($_REQUEST['pid']);
 	}
 	
-	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
-		
-		if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])) {
-			// insert component
-			$component_title_vars = $_REQUEST['page'];
-			$table    = 'pages';
-			$columns  = ['page_name','sub'];
-			$values   = [$component_title_vars,0];
-			$db->insert($table,$columns,$values);
+	if(isset($_POST)) {
+		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
+			
+			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])) {
+				// insert component
+				$component_title_vars = $_REQUEST['page'];
+				$table    = 'pages';
+				$columns  = ['page_name','sub'];
+				$values   = [$component_title_vars,0];
+				$db->insert($table,$columns,$values);
+			}
 		}
 	}
 	

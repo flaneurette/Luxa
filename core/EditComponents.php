@@ -53,25 +53,25 @@
 		exit;
 	}
 	
-	if($_REQUEST['csrf'] === $_SESSION['uuid']) {
-		
-		// update components.
-		
-		if(isset($_REQUEST['count'])) { 
-			$len = $_REQUEST['count'];
-			} else {
-			$len = 0;
-		}
-		
-		for($i = 0; $i < $len; $i++) {
+	if(isset($_POST)) {
+		if(isset($_POST['csrf']) === $_SESSION['uuid']) {
+			// update components.
+			if(isset($_POST['count'])) { 
+				$len = $_POST['count'];
+				} else {
+				$len = 0;
+			}
 			
-			$id = $db->intcast($_REQUEST['id'.$i]);
-			$component_title_vars = $_REQUEST['component_title_' . $i];
-			$component_text_vars  = $_REQUEST['component_text_' . $i];
-			$table    = 'components';
-			$columns  = ['component_title','component_text'];
-			$values   = [$component_title_vars,$component_text_vars];
-			$db->update($table,$columns,$values,$id);
+			for($i = 0; $i < $len; $i++) {
+				
+				$id = $db->intcast($_POST['id'.$i]);
+				$component_title_vars = $_POST['component_title_' . $i];
+				$component_text_vars  = $_POST['component_text_' . $i];
+				$table    = 'components';
+				$columns  = ['component_title','component_text'];
+				$values   = [$component_title_vars,$component_text_vars];
+				$db->update($table,$columns,$values,$id);
+			}
 		}
 	}
 	
