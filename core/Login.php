@@ -64,6 +64,12 @@
 					
 				if(count($result) >= 1 && password_verify($password, $result[0]['password'])) {
 					
+					$id = 1;
+					$table    = 'users';
+					$columns  = ['attempts'];
+					$values   = [0];
+					$db->update($table,$columns,$values,$id);
+					
 					$_SESSION['uid'] = $db->intcast($result[0]['id']);
 					$_SESSION['profile'] = $result[0];
 					$_SESSION['loggedin'] = '1';
@@ -103,7 +109,7 @@
 	</ul>
 	</header>
 	<nav class="nav">
-	/ index
+	/ login
 	</nav>
 	<article class="main">
 	<h1>Login</h1>
