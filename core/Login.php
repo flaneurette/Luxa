@@ -116,14 +116,10 @@
 	<h1>Login</h1>
 		<form name="login" method="POST" action="" class="loginform">
 		<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-		<fieldset>
 		<label>Username</label>
 		<input type="text" name="username" value="" required>
-		</fieldset>
-		<fieldset>
 		<label>Password</label>
 		<input type="password" name="password" value="" required>
-		</fieldset>
 		<input type="submit" name="" value="Login" />
 	</form>
 	</article>

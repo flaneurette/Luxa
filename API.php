@@ -20,8 +20,8 @@
 		$operator = '*';
 		$result = $db->select($table,$operator,$column,$value);
 		} else {
-		$result = $db->query("SELECT * from components ORDER BY id DESC");
+		$result = $db->query("SELECT * from `components` ORDER BY id DESC");
 	}
-
+	
 echo json_encode($result);
 ?>

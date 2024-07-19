@@ -6,10 +6,10 @@
 	header("Referrer-Policy: same-origin");
 
 	session_start(); 
-	session_regenerate_id();	
+	session_regenerate_id();
 	// login check
 	if(isset($_SESSION['loggedin']) != '1') {
-		header("Location: ../../login/");
+		header("Location: ../../../login/");
 		exit;
 	} 
 
@@ -50,21 +50,19 @@
 	
 	if(isset($_POST['csrf'])) {
 		if($_POST['csrf'] === $_SESSION['uuid']) {
-			if(isset($_POST['component_title']) && !empty($_POST['component_title'])) {
-				// insert snippet.
-				$id = $db->intcast($_POST['pageid']);
-				$component_title_vars = $_POST['component_title'];
-				$component_text_vars  = $_POST['component_text'];
-				$table    = 'components';
-				$columns  = ['pid','component_title','component_text'];
-				$values   = [$id,$component_title_vars,$component_text_vars];
-				$db->insert($table,$columns,$values);
+			
+			if(isset($_REQUEST['old_password']) && !empty($_REQUEST['new_password'])) {
+				
+				$newpassword1 = $_REQUEST['new_password'];
+				$newpassword2 = password_hash($newpassword1, PASSWORD_DEFAULT);
+				$id = 1;
+				$table    = 'users';
+				$columns  = ['password'];
+				$values   = [$newpassword2];
+				$db->update($table,$columns,$values,$id);
 			}
 		}
 	}
-	
-	$result = $db->query("SELECT * FROM pages");
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,7 +75,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<script src="<?php echo SITE;?>assets/js/ui.js"></script>
 	<title>PLAIN UI - Headless CMS</title>
 </head>
 <body>
@@ -96,26 +93,14 @@
 	</header>
 	<form name="post" action="" method="POST" id="form" autocomplete="off" data-lpignore="true" enctype="multipart/form-data">
 	<nav class="nav">
-	/ index / add / component on 		<select name="pageid">
-		<?php 
-		for($i=0;$i<count($result);$i++) { 
-		?> 
-		<option value="<?php echo $result[$i]['id'];?>"><?php echo $result[$i]['page_name'];?></option>
-		<?php 
-		} 
-		?>
-		</select> <input type="submit" onclick="document.getElementById('form').submit();" class="btn" value="update" />
+	/ index / settings <input type="submit" onclick="plainui.post();" class="btn" value="save" />
 	</nav>
 	<article class="main">
-	
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<input type="hidden" name="edit" value="1" />
-		<h1><div name="" contentEditable="true" id="titleditor" oninput="plainui.proc('titleditor','component_title');">Title</div></h1>
-		<input type="hidden" name="component_title" id="component_title" value=""  />
-		<textarea id="component_text" name="component_text" class="textarea"></textarea>
-		<div name="component_text" contentEditable="true" name="post-message" class="texteditor" id="texteditor" oninput="plainui.proc('texteditor','component_text');" placeholder="Write...">Text...</div>
-	</form>
+	<label>Old password: </label><input type="password" name="old_password" value="" placeholder="Type here: design.html, or index.php" />
+	<label>New password: </label> <input type="password" name="new_password" value="" placeholder="New password" />
 	</article>
+	</form>
 </div>
 </body>
 </html>

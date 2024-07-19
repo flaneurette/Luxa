@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>	
-<title>UX HTTP</title>
+<head>
+	
+  <title>UX HTTP</title>
 <script src="UX.js"></script>
 </head>
 <body>
@@ -12,9 +13,10 @@
   <div>
     <div :loop="blogs">
 	<div>
-	    <h1>{{component_title}}</h1>
-	    <p>{{component_text}}</p>
+		 <h1>{{component_title}}</h1>
+		 <p>{{component_text}}</p>
 	 </div>
+    </ul>
   </div>
 </div>
 	

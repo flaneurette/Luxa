@@ -75,12 +75,17 @@ fieldset {
 	min-inline-size: 0em;
 }
 
+label {
+	margin: var(--spacing-xlarge);
+}
+
 input {
 	font-family: var(--font-family-input);
 	font-weight: var(--fontweight-normal);
 	padding: 0.6em;
-	margin: 0em;
-	border: 1px solid white;
+	margin: var(--spacing-xlarge);
+	border: 1px solid var(--lightgrey);
+	display: block;
 	border-radius: 0.3em;
 	width: var(--viewwidth-medium);
 	font-size: var(--font-medium);
@@ -112,14 +117,13 @@ input[type=button],input[type=submit],input[type=reset] {
 	box-shadow: var(--shadow-medium);
 	font-weight: var(--fontweight-bold);
 	text-transform: uppercase;
-	transition-duration: 0.3s;
 	width: 15em;
 	cursor: pointer;
 }
 
 input[type=button]:hover,input[type=submit]:hover  {
 	background-color: var(--grey);
-	color: var(--white);
+	color: var(--black);
 	border: 1px solid var(--grey);
 	width: 15em;
 	background-image: linear-gradient(180deg,var(--grey),var(--lightgrey)); 
@@ -299,6 +303,7 @@ hr {
 		width: 80%;
 		float: left;
 		display: block;
+		margin-top: var(--spacing-xlarge);
 	}
 
 	.header h1 {

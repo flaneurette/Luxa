@@ -88,6 +88,7 @@
 	<li><a href="<?php echo SITE;?>pages/add/">Add page</a></li>
 	<li><a href="<?php echo SITE;?>components/add/">Add component</a></li>
 	<li><a href="<?php echo SITE;?>resources/">Resources</a></li>
+	<li><a href="<?php echo SITE;?>settings/">Settings</a></li>
 	<li><a href="<?php echo SITE;?>logout/<?php echo $token;?>/">Exit</a></li>
 	</ul>
 	</header>
@@ -97,15 +98,6 @@
 	</nav>
 	<article class="main">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
 	<input type="file" name="resource[]"/>
 	<input type="file" name="resource[]"/>
 	<input type="file" name="resource[]"/>
