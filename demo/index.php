@@ -16,7 +16,6 @@
 		 <h1>{{component_title}}</h1>
 		 <p>{{component_text}}</p>
 	 </div>
-    </ul>
   </div>
 </div>
 	
