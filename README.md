@@ -16,7 +16,7 @@ By default, the API writes JSON data. Possible outputs:
 
 1. filetype=csv will output CSV
 2. filetype=array will output an array
-3. filetype=JSON (or blank) will output JSON
+3. filetype=json (or blank) will output JSON
 
    Example: https://localhost/CMS/API.php?filetype=csv&id=1
    will fetch the index.html in CSV format. (Note that HTMLentities are encoded.)
