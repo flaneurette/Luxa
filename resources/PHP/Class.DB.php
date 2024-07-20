@@ -10,6 +10,7 @@ define('USERNAME', 'root');
 define('PASSWORD', '');
 define('MAX_LOGIN_ATTEMPTS', 10);
 
+
 class DB {
 	private static $instance;
 	private $connection;

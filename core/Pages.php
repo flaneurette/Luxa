@@ -29,7 +29,7 @@
 	$_SESSION['admin-uuid'] = $cryptography->uniqueID();
 	
 	if(!isset($_SESSION['admin-uuid']) || empty($_SESSION['admin-uuid'])) {
-		echo 'Could not initialize a session. Possible reasons: session data might be full or not possible to create a session. For security reasons the administration panel cannot be loaded. Exiting.';
+		header("location: ../error/3/");
 		exit;
 	}
 	
@@ -97,8 +97,9 @@
 	?>
 		<tr>
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['page_name'];?></a></td>
-		<td> <a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $db->intcast($result[$i]['id']);?>">API</a></td>
-		<td><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/">delete</a></td>
+		<td><a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $db->intcast($result[$i]['id']);?>">API</a></td>
+		<td width="500"></td>
+		<td width="80"><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/">delete</a></td>
 		</tr>
 	
 	<?php

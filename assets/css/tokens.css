@@ -224,7 +224,6 @@ hr {
 	margin: var(--spacing-large);
 	background-color: var(--red);
 	color: var(--white);
-	font-weight: var(--fontweight-bold);
 }
 
 .close-dialog {

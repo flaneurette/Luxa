@@ -30,7 +30,7 @@
 	$_SESSION['admin-uuid'] = $cryptography->uniqueID();
 	
 	if(!isset($_SESSION['admin-uuid']) || empty($_SESSION['admin-uuid'])) {
-		echo 'Could not initialize a session. Possible reasons: session data might be full or not possible to create a session. For security reasons the administration panel cannot be loaded. Exiting.';
+		header("location: ../error/3/");
 		exit;
 	}
 	

@@ -24,7 +24,7 @@
 	$_SESSION['admin-uuid'] = $cryptography->uniqueID();
 	
 	if(!isset($_SESSION['admin-uuid']) || empty($_SESSION['admin-uuid'])) {
-		echo 'Could not initialize a session. Possible reasons: session data might be full or not possible to create a session. For security reasons the administration panel cannot be loaded. Exiting.';
+		header("location: ../error/3/");
 		exit;
 	}
 	
@@ -59,7 +59,7 @@
 				
 				if(count($result) >= 1 && !password_verify($password, $result[0]['password'])) {
 					if($result_attempt[0]['attempts'] >= MAX_LOGIN_ATTEMPTS) {
-						echo 'You have reached the maximum login attempts, please contact your database administrator to lift restriction.';
+						header("location: ../error/1/");
 						$may_login = false;
 						exit;
 					}	

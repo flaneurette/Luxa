@@ -29,7 +29,7 @@
 	$_SESSION['admin-uuid'] = $cryptography->uniqueID();
 	
 	if(!isset($_SESSION['admin-uuid']) || empty($_SESSION['admin-uuid'])) {
-		echo 'Could not initialize a session. Possible reasons: session data might be full or not possible to create a session. For security reasons the administration panel cannot be loaded. Exiting.';
+		header("location: ../error/3/");
 		exit;
 	}
 	
@@ -97,8 +97,8 @@
 	</nav>
 	<article class="main">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<label>Old password: </label><input type="password" name="old_password" value="" placeholder="Type here: design.html, or index.php" />
-	<label>New password: </label> <input type="password" name="new_password" value="" placeholder="New password" />
+	<label>Old password: </label><input type="password" name="old_password" value="" placeholder="Old password" required>
+	<label>New password: </label> <input type="password" name="new_password" value="" placeholder="New password" required>
 	</article>
 	</form>
 </div>

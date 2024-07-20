@@ -10,13 +10,13 @@
 	include("../resources/PHP/Class.DB.php");
 	
 	if(!isset($_SESSION['admin-uuid']) || empty($_SESSION['admin-uuid'])) {
-		echo 'Could not initialize a session. Possible reasons: session data might be full or not possible to create a session. For security reasons the administration panel cannot be loaded. Exiting.';
+		header("location: ../error/3/");
 		exit;
 	}
 	
 
 	if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
-		echo 'Token is incorrect.';
+		header("location: ../error/2/");
 		exit;
 	}
 	
