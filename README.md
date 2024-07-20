@@ -19,7 +19,7 @@ Possible outputs:
 1. filetype=csv will output CSV
 2. filetype=array will output an array
 3. filetype=json (or blank) will output JSON
-4. filetype=unique will output incremental JSON
+4. filetype=unique will output unique (incremental) JSON
 
    Example: https://localhost/CMS/API.php?filetype=unique&id=1
    will fetch the index.html and increments the fields in JSON format.
