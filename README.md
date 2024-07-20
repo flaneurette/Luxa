@@ -30,7 +30,7 @@ With UX.js, the following code will fetch all JSON data from the API:
 
 	<script>
 	let app = new UX();
-	app.http('API.php', 'callback', mycall);
+	app.http('API.php?filetype=json', 'callback', mycall);
 	function mycall(dataset) {
 		app.load({
 			data: {
