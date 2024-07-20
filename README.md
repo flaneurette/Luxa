@@ -6,9 +6,7 @@ Plain UI is a simple yet modern headless CMS, which outputs JSON data through an
 # Installation
 
 1. Edit /resources/PHP/Class.DB.php and define the database and paths.
-2. Import the PlainUI SQL file, goto the index page and login with: username: admin, password: admin. 
-
-(Be sure to use a different Bcrypt password on a production setting.)
+2. Import the PlainUI SQL file, goto the index page and login with: username: admin, password: admin.
 
 # Requirements
 PHP, MYSQL, mod_rewrite
