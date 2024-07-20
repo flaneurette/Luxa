@@ -23,24 +23,24 @@
 		$result = $db->query("SELECT * from `components` ORDER BY id DESC");
 	}
 
-if(isset($_REQUEST['filetype'])) {
-	if($_REQUEST['filetype'] == 'array') {
-		var_dump($result);
-	} elseif($_REQUEST['filetype'] == 'csv') {
-		$file = 'resources/content/temp.csv';
-		$fp = fopen($file, 'w');
-		foreach ($result as $fields) {
-			fputcsv($fp, $fields);
+	if(isset($_REQUEST['filetype'])) {
+		if($_REQUEST['filetype'] == 'array') {
+			var_dump($result);
+		} elseif($_REQUEST['filetype'] == 'csv') {
+			$file = 'resources/content/temp.csv';
+			$fp = fopen($file, 'w');
+			foreach ($result as $fields) {
+				fputcsv($fp, $fields);
+			}
+			fclose($fp);
+			if(file_exists($file)) {
+				readfile($file);
+			}
+		} else {
+			echo json_encode($result);
 		}
-		fclose($fp);
-		if(file_exists($file)) {
-			readfile($file);
-		}
+		
 	} else {
 		echo json_encode($result);
 	}
-	
-} else {
-	echo json_encode($result);
-}
 ?>
