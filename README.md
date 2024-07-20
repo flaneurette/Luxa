@@ -15,7 +15,7 @@ PHP, MYSQL, mod_rewrite
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
 https://github.com/flaneurette/UX.js
 
-# DEMO with UX.js
+# Demo with UX.js
 With UX.js, the following code will fetch all JSON data from the API:
 
 	<script>
