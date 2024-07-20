@@ -13,15 +13,34 @@
 	$db = new sql();
 		
 	if(isset($_REQUEST['id'])) { 
-		$pageid =  $db->intcast($_REQUEST['id']);
-		$table    = 'components';
-		$column   = 'pid';
-		$value    =  $pageid;
-		$operator = '*';
-		$result = $db->select($table,$operator,$column,$value);
+		$pageid 	=  $db->intcast($_REQUEST['id']);
+		$table    	= 'components';
+		$column   	= 'pid';
+		$value    	=  $pageid;
+		$operator 	= '*';
+		$result 	= $db->select($table,$operator,$column,$value);
 		} else {
 		$result = $db->query("SELECT * from `components` ORDER BY id DESC");
 	}
+
+if(isset($_REQUEST['filetype'])) {
+	if($_REQUEST['filetype'] == 'array') {
+		var_dump($result);
+	} elseif($_REQUEST['filetype'] == 'csv') {
+		$file = 'resources/content/temp.csv';
+		$fp = fopen($file, 'w');
+		foreach ($result as $fields) {
+			fputcsv($fp, $fields);
+		}
+		fclose($fp);
+		if(file_exists($file)) {
+			readfile($file);
+		}
+	} else {
+		echo json_encode($result);
+	}
 	
-echo json_encode($result);
+} else {
+	echo json_encode($result);
+}
 ?>
