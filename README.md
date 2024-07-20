@@ -12,14 +12,18 @@ Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array d
 PHP, MYSQL, mod_rewrite
 
 # API
-By default, the API writes JSON data. Possible outputs:
+By default, the API writes JSON data from the database. 
+
+Possible outputs:
 
 1. filetype=csv will output CSV
 2. filetype=array will output an array
 3. filetype=json (or blank) will output JSON
+4. filetype=unique will output incremental JSON
 
-   Example: https://localhost/CMS/API.php?filetype=csv&id=1
-   will fetch the index.html in CSV format. (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in PlainUI.)
+   Example: https://localhost/CMS/API.php?filetype=unique&id=1
+   will fetch the index.html and increments the fields in JSON format.
+   (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in PlainUI.)
    
 # Uses
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
