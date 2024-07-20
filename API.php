@@ -26,6 +26,14 @@
 	if(isset($_REQUEST['filetype'])) {
 		if($_REQUEST['filetype'] == 'array') {
 			var_dump($result);
+		} elseif($_REQUEST['filetype'] == 'unique') {
+			for($i = 0; $i < count($result); $i++) {
+				$result[$i]["component_title_".$i] = $result[$i]["component_title"];
+				$result[$i]["component_text_".$i] = $result[$i]["component_text"];
+				unset($result[$i]["component_title"]);
+				unset($result[$i]["component_text"]);
+			}
+			echo json_encode($result);
 		} elseif($_REQUEST['filetype'] == 'csv') {
 			$file = 'resources/content/temp.csv';
 			$fp = fopen($file, 'w');
