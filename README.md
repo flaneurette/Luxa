@@ -23,7 +23,7 @@ Possible outputs:
 
    Example: https://localhost/CMS/API.php?filetype=unique&id=1
    will fetch the index.html and increments the fields in JSON format.
-   (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in PlainUI.)
+   (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in PlainUI.) 
    
 # Uses
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
