@@ -1,5 +1,5 @@
 # Plain UI
-Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through an API.
+Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through a RESTful API.
 
 <img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/adminscreen.png" />
 
