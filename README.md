@@ -1,7 +1,7 @@
 # Plain UI
 Plain UI is a simple yet modern headless CMS, which outputs JSON data through an API.
 
-<img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/screen.png" />
+<img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/adminscreen.png" />
 
 # Installation
 
