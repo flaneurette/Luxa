@@ -1,5 +1,5 @@
 # Plain UI
-Plain UI is a simple yet modern headless CMS, which outputs JSON data through an API.
+Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through an API.
 
 <img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/adminscreen.png" />
 
@@ -11,6 +11,13 @@ Plain UI is a simple yet modern headless CMS, which outputs JSON data through an
 # Requirements
 PHP, MYSQL, mod_rewrite
 
+# API
+By default, the API writes JSON data. Possible outputs:
+
+1. filetype=csv will output CSV
+2. filetype=array will output an array
+3. filetype=JSON (or blank) will output JSON
+   
 # Uses
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
 https://github.com/flaneurette/UX.js
