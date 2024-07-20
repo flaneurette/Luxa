@@ -12,7 +12,7 @@ Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array d
 PHP, MYSQL, mod_rewrite
 
 # API
-By default, the API writes JSON data from the database. 
+By default, the API writes data from the database in JSON format. 
 
 Possible outputs:
 
