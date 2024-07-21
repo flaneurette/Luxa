@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2024 at 05:01 PM
+-- Generation Time: Jul 21, 2024 at 06:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,13 +40,15 @@ CREATE TABLE `components` (
 --
 
 INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `component_image`) VALUES
-(1, 1, 'This is a snippet title', 'This is a snippet text', ''),
-(2, 1, 'This is a another snippet title', 'This is a another snippet text', ''),
-(6, 2, 'We are X, Y Z!', 'We are X, Y Z!', ''),
-(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', ''),
-(10, 6, 'Test', 'Test...', ''),
-(12, 3, 'Test', 'Test', ''),
-(13, 1, 'Title', 'Text...', '');
+(1, 1, 'This is a snippet title', 'This is a snippet text', 'https://localhost/cms/resources/content/thumb.png'),
+(2, 1, 'This is a another snippet title', 'This is a another snippet text', 'https://localhost/cms/resources/content/thumb.png'),
+(6, 2, 'We are X, Y Z!', 'We are X, Y Z!', 'https://localhost/cms/resources/content/thumb.png'),
+(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', 'https://localhost/cms/resources/content/thumb.png'),
+(10, 6, 'Test', 'Test...', 'https://localhost/cms/resources/content/thumb.png'),
+(12, 3, 'Test', 'Test', 'https://localhost/cms/resources/content/thumb.png'),
+(13, 1, 'Title', 'Text...', 'https://localhost/cms/resources/content/thumb.png'),
+(23, 1, 'Demo', 'This is a demo text', 'https://localhost/cms/resources/content/thumb.png'),
+(24, 1, 'Image test', 'Images testing', 'https://localhost/cms/resources/content/thumb.png');
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,6 @@ CREATE TABLE `pages` (
 
 INSERT INTO `pages` (`id`, `page_name`, `sub`) VALUES
 (1, 'Index.html', 0),
-(2, 'About.html', 0),
 (3, 'Contact.html', 0);
 
 -- --------------------------------------------------------
@@ -120,7 +121,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pages`
