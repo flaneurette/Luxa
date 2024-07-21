@@ -69,8 +69,11 @@
 	for($i=0;$i<count($result);$i++){
 		if($result[$i]["component_image"] !='') {
 			$image = str_replace('../','',$result[$i]["component_image"]);
+				if(!file_exists(str_replace(SITE,'',$image))) {
+					$image = "../../../resources/content/thumb.png";
+				}
 			} else {
-			$image = "resources/images/thumb.png";
+			$image = "../../../resources/content/thumb.png";
 		}
 	?>
 		<img src="<?php echo $image;?>" width="50" style="float:left;"/>
