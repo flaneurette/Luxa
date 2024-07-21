@@ -10,8 +10,8 @@
 						if ($error == UPLOAD_ERR_OK) {
 							$tmp_name = $_FILES["main_image"]["tmp_name"][$key];
 							$name = basename($_FILES["main_image"]["name"][$key]);
-							$image = UPLOAD_DIR. "$name";
-							move_uploaded_file($tmp_name, $image);
+							$image = SITE . str_replace('../','',UPLOAD_DIR). "$name";
+							move_uploaded_file($tmp_name, UPLOAD_DIR. "$name");
 							
 						} else { } 
 					}
