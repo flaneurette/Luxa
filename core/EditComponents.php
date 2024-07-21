@@ -67,7 +67,13 @@
 	<input type="hidden" name="count" id="count" value="<?php echo count($result);?>" />
 	<?php 
 	for($i=0;$i<count($result);$i++){
+		if($result[$i]["component_image"] !='') {
+			$image = str_replace('../','',$result[$i]["component_image"]);
+			} else {
+			$image = "resources/images/thumb.png";
+		}
 	?>
+		<img src="<?php echo $image;?>" width="50" style="float:left;"/>
 		<h1><div name="" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $db->clean($result[$i]['component_title'],'encode');?></div></h1>
 		<input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
 		<textarea id="component_text_<?php echo $i;?>" name="component_text_<?php echo $i;?>" class="textarea"></textarea>
