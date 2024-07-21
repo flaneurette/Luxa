@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2024 at 06:30 PM
+-- Generation Time: Jul 21, 2024 at 08:10 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,12 +43,7 @@ INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `com
 (1, 1, 'This is a snippet title', 'This is a snippet text', 'https://localhost/cms/resources/content/thumb.png'),
 (2, 1, 'This is a another snippet title', 'This is a another snippet text', 'https://localhost/cms/resources/content/thumb.png'),
 (6, 2, 'We are X, Y Z!', 'We are X, Y Z!', 'https://localhost/cms/resources/content/thumb.png'),
-(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', 'https://localhost/cms/resources/content/thumb.png'),
-(10, 6, 'Test', 'Test...', 'https://localhost/cms/resources/content/thumb.png'),
-(12, 3, 'Test', 'Test', 'https://localhost/cms/resources/content/thumb.png'),
-(13, 1, 'Title', 'Text...', 'https://localhost/cms/resources/content/thumb.png'),
-(23, 1, 'Demo', 'This is a demo text', 'https://localhost/cms/resources/content/thumb.png'),
-(24, 1, 'Image test', 'Images testing', 'https://localhost/cms/resources/content/thumb.png');
+(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', 'https://localhost/cms/resources/content/thumb.png');
 
 -- --------------------------------------------------------
 
