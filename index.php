@@ -64,16 +64,18 @@
 	<table rowspan="" width="100%">
 	<?php 
 	for($i=0;$i<count($result);$i++){
-		
 		if($result[$i]["component_image"] !='') {
 			$image = str_replace('../','',$result[$i]["component_image"]);
+				if(!file_exists(str_replace(SITE,'',$image))) {
+					$image = "resources/content/thumb.png";
+				}
 			} else {
-			$image = "resources/images/thumb.png";
+			$image = "resources/content/thumb.png";
 		}
 	?>
 		<tr>
 		<td width="100"><img src="<?php echo $image;?>" width="50"/></td>
-		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
+		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/">EDIT</a></td>
 		<td width="500"></td>
 		</tr>
