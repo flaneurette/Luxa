@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2024 at 08:13 PM
+-- Generation Time: Jul 21, 2024 at 05:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,21 +31,22 @@ CREATE TABLE `components` (
   `id` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `component_title` tinytext NOT NULL,
-  `component_text` longtext NOT NULL
+  `component_text` longtext NOT NULL,
+  `component_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `components`
 --
 
-INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`) VALUES
-(1, 1, 'This is a snippet title', 'This is a snippet text'),
-(2, 1, 'This is a another snippet title', 'This is a another snippet text'),
-(6, 2, 'We are X, Y Z!', 'We are X, Y Z!'),
-(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...'),
-(10, 6, 'Test', 'Test...'),
-(12, 3, 'Test', 'Test'),
-(13, 1, 'Title', 'Text...');
+INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `component_image`) VALUES
+(1, 1, 'This is a snippet title', 'This is a snippet text', ''),
+(2, 1, 'This is a another snippet title', 'This is a another snippet text', ''),
+(6, 2, 'We are X, Y Z!', 'We are X, Y Z!', ''),
+(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', ''),
+(10, 6, 'Test', 'Test...', ''),
+(12, 3, 'Test', 'Test', ''),
+(13, 1, 'Title', 'Text...', '');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `attempts`) VALUES
-(1, 'admin', '$2y$10$96G5L2swhAb4OOSyramgd.CE/BTsYkcNrWrjSBsvopk9.WmmyZ84m', 1, 0);
+(1, 'admin', '$2y$10$ooXjcp5z6QaLr25rFNabiuP.G6i.EE.Ot4phvNrPYe0kmTOO24g0.', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -125,7 +126,7 @@ ALTER TABLE `components`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
