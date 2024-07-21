@@ -1,5 +1,4 @@
 <?php
-	
 	header("X-Frame-Options: DENY"); 
 	header("X-XSS-Protection: 1; mode=block"); 
 	header("Strict-Transport-Security: max-age=30");
@@ -7,9 +6,10 @@
  
 	session_start(); 
 	session_regenerate_id();
-
+	
 	include("../resources/PHP/Class.DB.php");
 	include("Cryptography.php");
+
 	
 	$cryptography = new Cryptography;
 	$db = new sql();
@@ -91,23 +91,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php echo SITE;?>assets/css/tokens.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<title>PLAIN UI - Headless CMS</title>
+<?php include("Meta.php");?>
 </head>
 <body>
 
 <div class="container">
 	<header class="header">
-	<h1><a href="<?php echo SITE;?>index.php">PLAIN UI</a></h1>
-	<ul class="navigate">
-	</ul>
+	<?php include("Navigation.php");?>
 	</header>
 	<nav class="nav">
 	/ login

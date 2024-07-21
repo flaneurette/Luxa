@@ -6,14 +6,21 @@
  
 	session_start(); 
 	session_regenerate_id();
+	
+	include("../resources/PHP/Class.DB.php");
+	include("Cryptography.php");
+	
 	// login check
+	
+	if(!isset($_SESSION['loggedin'])) {
+		header("Location: ".SITE."login/");
+		exit;	
+	}
+	
 	if(isset($_SESSION['loggedin']) != '1') {
-		header("Location: login/");
+		header("Location: ".SITE."login/");
 		exit;
 	} 
-	
-	include("resources/PHP/Class.DB.php");
-	include("core/Cryptography.php");
 	
 	$cryptography = new Cryptography;
 	$db = new sql();
@@ -42,27 +49,5 @@
 	} else {
 		$token = $_SESSION['uuid'];
 	}
-	$result = $db->query("SELECT * FROM components");
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php include("core/Meta.php");?>
-</head>
-<body>
 
-<div class="container">
-	<header class="header">
-	<?php include("core/Navigation.php");?>
-	</header>
-	<nav class="nav">
-	/ index
-	</nav>
-	<article class="main">
-	
-	<textarea class="textresult"><?php echo json_encode($result,JSON_PRETTY_PRINT); ?></textarea>
-	
-	</article>
-</div>
-</body>
-</html>
+?>
