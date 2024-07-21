@@ -49,7 +49,7 @@
 	$files = scandir($dir, SCANDIR_SORT_DESCENDING);
 	
 	for($i=0;$i<count($files);$i++) {
-		echo "<tr><td><a href=\"".UPLOAD_DIR.$files[$i]."\" target=\"_blank\">".$files[$i]."</a><td></tr>";
+		echo "<tr><td><a href=\"".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" target=\"_blank\">".$db->clean($files[$i],'encode')."</a><td></tr>";
 	}
 	
 	?>

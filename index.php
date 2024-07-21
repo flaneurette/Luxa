@@ -43,6 +43,7 @@
 		$token = $_SESSION['uuid'];
 	}
 	$result = $db->query("SELECT * FROM components");
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,8 +61,26 @@
 	</nav>
 	<article class="main">
 	
-	<textarea class="textresult"><?php echo json_encode($result,JSON_PRETTY_PRINT); ?></textarea>
-	
+	<table rowspan="" width="100%">
+	<?php 
+	for($i=0;$i<count($result);$i++){
+		
+		if($result[$i]["component_image"] !='') {
+			$image = str_replace('../','',$result[$i]["component_image"]);
+			} else {
+			$image = "resources/images/thumb.png";
+		}
+	?>
+		<tr>
+		<td width="100"><img src="<?php echo $image;?>" width="50"/></td>
+		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
+		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/">EDIT</a></td>
+		<td width="500"></td>
+		</tr>
+	<?php
+	}
+	?>
+	</table>	
 	</article>
 </div>
 </body>

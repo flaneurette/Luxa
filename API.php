@@ -30,8 +30,10 @@
 			for($i = 0; $i < count($result); $i++) {
 				$result[$i]["component_title_".$i] = $result[$i]["component_title"];
 				$result[$i]["component_text_".$i] = $result[$i]["component_text"];
+				$result[$i]["component_image_".$i] = $result[$i]["component_image"];
 				unset($result[$i]["component_title"]);
 				unset($result[$i]["component_text"]);
+				unset($result[$i]["component_image"]);
 			}
 			echo json_encode($result);
 		} elseif($_REQUEST['filetype'] == 'csv') {

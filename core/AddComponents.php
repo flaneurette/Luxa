@@ -4,15 +4,36 @@
 	
 	if(isset($_POST['csrf'])) {
 		if($_POST['csrf'] === $_SESSION['uuid']) {
-			if(isset($_POST['component_title']) && !empty($_POST['component_title'])) {
-				// insert snippet.
-				$id = $db->intcast($_POST['pageid']);
-				$component_title_vars = $_POST['component_title'];
-				$component_text_vars  = $_POST['component_text'];
-				$table    = 'components';
-				$columns  = ['pid','component_title','component_text'];
-				$values   = [$id,$component_title_vars,$component_text_vars];
-				$db->insert($table,$columns,$values);
+			if(isset($_REQUEST['component_title']) && !empty($_REQUEST['component_title'])) {
+				if(isset($_FILES['main_image']) && !empty($_FILES['main_image'])) {
+					foreach ($_FILES["main_image"]["error"] as $key => $error) {
+						if ($error == UPLOAD_ERR_OK) {
+							$tmp_name = $_FILES["main_image"]["tmp_name"][$key];
+							$name = basename($_FILES["main_image"]["name"][$key]);
+							$image = UPLOAD_DIR. "$name";
+							move_uploaded_file($tmp_name, $image);
+							
+						} else { } 
+					}
+				}
+				if(isset($image)) { 
+					$id = $db->intcast($_POST['pageid']);
+					$component_title_vars = $_POST['component_title'];
+					$component_text_vars  = $_POST['component_text'];
+					$table    = 'components';
+					$columns  = ['pid','component_title','component_text','component_image'];
+					$values   = [$id,$component_title_vars,$component_text_vars,$image];
+					$db->insert($table,$columns,$values);
+				} else {
+					$id = $db->intcast($_POST['pageid']);
+					$component_title_vars = $_POST['component_title'];
+					$component_text_vars  = $_POST['component_text'];
+					$table    = 'components';
+					$columns  = ['pid','component_title','component_text'];
+					$values   = [$id,$component_title_vars,$component_text_vars];
+					$db->insert($table,$columns,$values);
+				}
+				
 			}
 		}
 	}
@@ -51,6 +72,7 @@
 		<input type="hidden" name="component_title" id="component_title" value=""  />
 		<textarea id="component_text" name="component_text" class="textarea"></textarea>
 		<div name="component_text" contentEditable="true" name="post-message" class="texteditor" id="texteditor" oninput="plainui.proc('texteditor','component_text');" placeholder="Write...">Text...</div>
+		<label>Main image</label><input type="file" name="main_image[]" />
 	</form>
 	</article>
 </div>

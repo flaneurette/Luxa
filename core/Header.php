@@ -47,7 +47,7 @@
 		$token .= $cryptography->uniqueID();
 		$_SESSION['uuid'] = $token;		
 	} else {
-		$token = $_SESSION['uuid'];
+		$token = $db->clean($_SESSION['uuid'],'encode');
 	}
 
 ?>

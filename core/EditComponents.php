@@ -21,7 +21,6 @@
 			}
 			
 			for($i = 0; $i < $len; $i++) {
-				
 				$id = $db->intcast($_POST['id'.$i]);
 				$component_title_vars = $_POST['component_title_' . $i];
 				$component_text_vars  = $_POST['component_text_' . $i];
@@ -69,7 +68,7 @@
 	<?php 
 	for($i=0;$i<count($result);$i++){
 	?>
-		<h1><div name="" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $result[$i]['component_title'];?></div></h1>
+		<h1><div name="" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $db->clean($result[$i]['component_title'],'encode');?></div></h1>
 		<input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
 		<textarea id="component_text_<?php echo $i;?>" name="component_text_<?php echo $i;?>" class="textarea"></textarea>
 		<input type="hidden" name="id<?php echo $i;?>" value="<?php echo $db->intcast($result[$i]['id']);?>"  />
