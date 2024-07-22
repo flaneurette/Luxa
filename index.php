@@ -76,6 +76,7 @@
 		<tr>
 		<td width="100"><img src="<?php echo $image;?>" width="50"/></td>
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
+		<td><a href="<?php echo SITE;?>API.php?filetype=unique&id=<?php echo $db->intcast($result[$i]['pid']);?>" target="_blank">API</a></td>
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/">EDIT</a></td>
 		<td width="500"></td>
 		</tr>
