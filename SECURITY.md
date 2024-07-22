@@ -1,0 +1,21 @@
+# Security
+
+This CMS was built with a high degree of security in mind, following the OWASP guidelines for security.
+
+### Password
+By default the admin password is admin. Upon login, this can be changed under settings. The password is stored encrypted with bcrypt.
+
+### Login restriction
+It is not possible to enter a wrong password for more than 10 attempts. After that, the admin page is locked and needs to be unlocked by a database administrator. This prevents password brutforce attempts.
+
+### CSRF
+All pages are protected against CSRF (cross site request forgery) and only the admin has access to the pages and files
+
+### XSS
+Where possible, all pages are protected against XSS, Header forgery and Iframe inclusion. Be mindful, though, as HTML is allowed in compoenents. Yet, all HTML and possbbile scripts are HTML encoded and stored in the database.
+
+### SQL injection
+All data is checked upon databse insertion, and properly binded in the industry standard. Integers are casted, and htmlspecialchars is used for strings.
+
+### Sessions
+Session data is protected and checked for any DDos attacks, if found a warning will be visible.
