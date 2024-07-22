@@ -37,14 +37,13 @@
 			}
 			echo json_encode($result);
 		} elseif($_REQUEST['filetype'] == 'csv') {
-			$file = 'resources/content/temp.csv';
-			$fp = fopen($file, 'w');
-			foreach ($result as $fields) {
-				fputcsv($fp, $fields);
-			}
-			fclose($fp);
-			if(file_exists($file)) {
-				readfile($file);
+			for($i=0;$i<count($result);$i++) {
+				echo $result[$i]['id'] . ',' 
+				.$result[$i]['pid'] . ',"' 
+				.$result[$i]['component_title']. '","'
+				.$result[$i]['component_text']. '",'
+				.$result[$i]['component_image']. ','
+				.PHP_EOL;
 			}
 		} else {
 			echo json_encode($result);
