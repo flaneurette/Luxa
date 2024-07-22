@@ -40,12 +40,17 @@
 			echo json_encode($result);
 		} elseif($_REQUEST['filetype'] == 'csv') {
 			for($i=0;$i<count($result);$i++) {
-				echo $result[$i]['id']. ',' 
-				.$result[$i]['pid']. ',"' 
-				.addslashes($result[$i]['component_title']). '","'
-				.addslashes($result[$i]['component_text']). '",'
-				.$result[$i]['component_image']. ','
-				.PHP_EOL;
+				$data  = $result[$i]['id'].',';
+				$data .= $result[$i]['pid']. ',"';
+				$data .= addslashes($result[$i]['component_title']). '","';
+				$data .= addslashes($result[$i]['component_text']). '",';
+				if($i==count($result)-1) { 
+					$data .= $result[$i]['component_image'];
+					} else {
+					$data .= $result[$i]['component_image'];
+				}
+				$data .= PHP_EOL;
+				echo $data;
 			}
 		} else {
 			echo json_encode($result);
