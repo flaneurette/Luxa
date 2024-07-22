@@ -40,8 +40,8 @@
 			for($i=0;$i<count($result);$i++) {
 				echo $result[$i]['id'] . ',' 
 				.$result[$i]['pid'] . ',"' 
-				.$result[$i]['component_title']. '","'
-				.$result[$i]['component_text']. '",'
+				.addslashes($result[$i]['component_title']). '","'
+				.addslashes($result[$i]['component_text']). '",'
 				.$result[$i]['component_image']. ','
 				.PHP_EOL;
 			}
