@@ -6,7 +6,7 @@ Security declaration: This CMS was built with a highest degree of security in mi
 By default the admin password is admin. Upon login, this can be changed under settings. The password is stored encrypted with bcrypt.
 
 ### Login restriction
-It is not possible to enter a wrong password for more than 10 attempts. After that, the admin page is locked and needs to be unlocked by a database administrator. This prevents password brutforce attempts.
+It is not possible to enter a wrong password for more than 10 attempts. After that, the admin page is locked and needs to be unlocked by a database administrator. This prevents password brutforce attempts. The amount of attempts can be changed in de database class.
 
 ### CSRF
 All pages are protected against CSRF (cross site request forgery) and only the admin has access to the pages and files
