@@ -18,4 +18,4 @@ Where possible, all pages are protected against XSS, Header forgery and Iframe i
 All data is checked upon database insertion, and properly binded as per the industry standard. Integers are casted, and htmlspecialchars is used for strings.
 
 ### Sessions
-Session data is protected and checked for any DDos attacks, if detected, a warning will be visible, and it won't be possible to modify data.
+Session data is protected and checked for any DDos attacks, if detected, a warning will be visible, and it won't be possible to modify data or to proceed further. This prevent overwriting and bruteforcing session data.
