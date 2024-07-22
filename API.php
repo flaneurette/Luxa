@@ -44,11 +44,7 @@
 				$data .= $result[$i]['pid']. ',"';
 				$data .= addslashes($result[$i]['component_title']). '","';
 				$data .= addslashes($result[$i]['component_text']). '",';
-				if($i==count($result)-1) { 
-					$data .= $result[$i]['component_image'];
-					} else {
-					$data .= $result[$i]['component_image'];
-				}
+				$data .= $result[$i]['component_image'];
 				$data .= PHP_EOL;
 				echo $data;
 			}
