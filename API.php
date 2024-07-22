@@ -25,7 +25,9 @@
 
 	if(isset($_REQUEST['filetype'])) {
 		if($_REQUEST['filetype'] == 'array') {
-			var_dump($result);
+			for($i=0;$i<count($result);$i++) {
+				print_r($result[$i]);
+			}
 		} elseif($_REQUEST['filetype'] == 'unique') {
 			for($i = 0; $i < count($result); $i++) {
 				$result[$i]["component_title_".$i] = $result[$i]["component_title"];
@@ -38,8 +40,8 @@
 			echo json_encode($result);
 		} elseif($_REQUEST['filetype'] == 'csv') {
 			for($i=0;$i<count($result);$i++) {
-				echo $result[$i]['id'] . ',' 
-				.$result[$i]['pid'] . ',"' 
+				echo $result[$i]['id']. ',' 
+				.$result[$i]['pid']. ',"' 
 				.addslashes($result[$i]['component_title']). '","'
 				.addslashes($result[$i]['component_text']). '",'
 				.$result[$i]['component_image']. ','
