@@ -6,7 +6,6 @@
 	header("Referrer-Policy: same-origin");
 	
 	session_start(); 
-	session_regenerate_id();
 	require("configuration.php");
 	include("resources/PHP/Class.DB.php");
 	
@@ -55,4 +54,5 @@
 	} else {
 		echo json_encode($result);
 	}
+	session_write_close();
 ?>
