@@ -12,6 +12,7 @@
 		exit;
 	} 
 	
+	require("configuration.php");
 	include("resources/PHP/Class.DB.php");
 	include("core/Cryptography.php");
 	

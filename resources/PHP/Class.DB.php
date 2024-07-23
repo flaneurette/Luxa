@@ -1,16 +1,5 @@
 <?php
 
-// this must be defined.
-define('SITE','https://localhost/cms/'); 
-define('UPLOAD_DIR', '../resources/content/');
-define('CHARSET', 'utf8');
-define('HOST', 'localhost');
-define('DATABASE', 'Luxa');
-define('USERNAME', 'root');
-define('PASSWORD', '');
-define('MAX_LOGIN_ATTEMPTS', 10);
-
-
 class DB {
 	private static $instance;
 	private $connection;

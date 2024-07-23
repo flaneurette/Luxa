@@ -1,5 +1,6 @@
 <?php
 	
+	require("../configuration.php");
 	include("Header.php");
 	
 	if(isset($_POST['csrf'])) {

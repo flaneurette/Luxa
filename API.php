@@ -7,7 +7,7 @@
 	
 	session_start(); 
 	session_regenerate_id();
-
+	require("configuration.php");
 	include("resources/PHP/Class.DB.php");
 	
 	$db = new sql();
