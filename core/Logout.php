@@ -13,17 +13,22 @@
 		header("location: ../error/3/");
 		exit;
 	}
-	
 
 	if($_REQUEST['csrf'] !== $_SESSION['uuid']) {
 		header("location: ../error/2/");
 		exit;
 	}
 	
-	$_SESSION['uuid'] = NULL;
-	$_SESSION['admin-uuid'] = NULL;
-	$_SESSION['token'] = NULL;
-	$_SESSION['loggedin'] = NULL;
+	$_SESSION['uuid'] = '';
+	$_SESSION['admin-uuid'] = '';
+	$_SESSION['token'] = '';
+	$_SESSION['loggedin'] = ''
+	
+	unset($_SESSION['uuid']);
+	unset($_SESSION['admin-uuid']);
+	unset($_SESSION['token']);
+	unset($_SESSION['loggedin']);
+	
 	session_regenerate_id();
 	
 	header("Location: ../../index.php");
