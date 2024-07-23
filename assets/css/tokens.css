@@ -20,7 +20,7 @@
 	--lightblack: #666666;
 	--white: #ffffff;
 	--lightwhite: #fffdf5;
-	--grey: #b1b1b1;	
+	--grey: #999999;	
 	--lightgrey: #e2e2e2;
 	--transparent: rgba(0, 0, 0, 0);
 	
@@ -90,6 +90,7 @@ input {
 	border-radius: 0.1em;
 	width: var(--viewwidth-medium);
 	font-size: var(--font-medium);
+	outline: none;
 }
 
 input[type=checkbox], input[type=radio]  {
@@ -131,6 +132,10 @@ input[type=button]:hover,input[type=submit]:hover  {
 }
 
 input:focus {
+	outline: none;
+}
+
+input:selected {
 	outline: none;
 }
 
