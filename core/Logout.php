@@ -19,18 +19,8 @@
 		exit;
 	}
 	
-	$_SESSION['uuid'] = '';
-	$_SESSION['admin-uuid'] = '';
-	$_SESSION['token'] = '';
-	$_SESSION['loggedin'] = ''
-	
-	unset($_SESSION['uuid']);
-	unset($_SESSION['admin-uuid']);
-	unset($_SESSION['token']);
-	unset($_SESSION['loggedin']);
-	
-	session_regenerate_id();
-	
+	$_SESSION = array();
+	session_destroy();
 	header("Location: ../../index.php");
 	exit;
 ?>

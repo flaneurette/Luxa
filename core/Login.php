@@ -74,6 +74,7 @@
 					$_SESSION['uid'] = $db->intcast($result[0]['id']);
 					$_SESSION['profile'] = $result[0];
 					$_SESSION['loggedin'] = '1';
+					session_regenerate_id();
 					 header("Location: ../index.php");
 					 exit;
 					} else {
