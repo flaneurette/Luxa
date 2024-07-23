@@ -87,7 +87,7 @@ input {
 	margin: var(--spacing-xlarge);
 	border: 1px solid var(--lightgrey);
 	display: block;
-	border-radius: 0.3em;
+	border-radius: 0.1em;
 	width: var(--viewwidth-medium);
 	font-size: var(--font-medium);
 }
