@@ -5,7 +5,7 @@ define('SITE','https://localhost/cms/');
 define('UPLOAD_DIR', '../resources/content/');
 define('CHARSET', 'utf8');
 define('HOST', 'localhost');
-define('DATABASE', 'PlainUI');
+define('DATABASE', 'Luxa');
 define('USERNAME', 'root');
 define('PASSWORD', '');
 define('MAX_LOGIN_ATTEMPTS', 10);
