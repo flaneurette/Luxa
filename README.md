@@ -11,7 +11,7 @@ Luxa is a simple yet modern headless CMS, which outputs JSON, CSV or Array data 
    the password can be changed in the admin panel under settings.
 
 # Requirements
-PHP, MYSQL, mod_rewrite
+PHP, MySQL, mod_rewrite
 
 # API
 By default, the API writes data from the database in JSON format. 
