@@ -6,7 +6,7 @@ Luxa is a simple yet modern headless CMS, which outputs JSON, CSV or Array data 
 # Installation
 
 1. Edit /resources/PHP/Class.DB.php and define the database and paths.
-2. Import the PlainUI SQL file, goto the index page and login with: username: admin, password: admin.
+2. Import the Luxa SQL file, goto the index page and login with: username: admin, password: admin.
 
 # Requirements
 PHP, MYSQL, mod_rewrite
