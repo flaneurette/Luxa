@@ -6,15 +6,20 @@
  
 	session_start(); 
 	session_regenerate_id();
+
+	require("configuration.php");
+	include("resources/PHP/Class.DB.php");
+	include("core/Cryptography.php");
+	
 	// login check
+	if(!isset($_SESSION['loggedin'])) {
+		header("Location: ".SITE."login/");
+		exit;	
+	}
 	if(isset($_SESSION['loggedin']) != '1') {
 		header("Location: login/");
 		exit;
 	} 
-	
-	require("configuration.php");
-	include("resources/PHP/Class.DB.php");
-	include("core/Cryptography.php");
 	
 	$cryptography = new Cryptography;
 	$db = new sql();
