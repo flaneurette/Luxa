@@ -52,6 +52,7 @@
 
 * {
 	font-family: var(--font-family);
+	color:  var(--grey);
 }
 
 html, body {
@@ -302,7 +303,7 @@ hr {
 		width: 80%;
 		float: left;
 		display: block;
-		margin-top: var(--spacing-xlarge);
+		margin-top: var(--spacing-large);
 	}
 
 	.header h1 {

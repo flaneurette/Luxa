@@ -36,7 +36,8 @@
 	</nav>
 	<article class="main">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<input type="text" name="page" value="" placeholder="Type here: design.html, or index.php" />
+	<label>Slug</label>
+	<input type="text" name="page" value="" placeholder="Type here: /design/ or /index/" />
 	</article>
 	</form>
 </div>

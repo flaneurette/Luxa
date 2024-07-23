@@ -37,7 +37,7 @@ img {
 
 	let app = new UX();
 	
-	app.http('../API.php', 'callback', mycall);
+	app.http('../API.php?filetype=json', 'callback', mycall);
 	
 	function mycall(dataset) {
 		let data = dataset.replaceAll('&gt;','>').replaceAll('&lt;','<');

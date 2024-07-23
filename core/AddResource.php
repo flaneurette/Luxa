@@ -33,12 +33,12 @@
 	</nav>
 	<article class="main">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
-	<input type="file" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]"/>
 	</article>
 	</form>
 	<article class="main">
