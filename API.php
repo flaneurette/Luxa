@@ -19,7 +19,7 @@
 		$operator 	= '*';
 		$result 	= $db->select($table,$operator,$column,$value);
 		} else {
-		$result = $db->query("SELECT * from `components` ORDER BY id DESC");
+		$result = $db->query("SELECT * from `components` ORDER BY id ASC");
 	}
 
 	if(isset($_REQUEST['filetype'])) {
