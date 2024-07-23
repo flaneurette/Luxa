@@ -25,6 +25,7 @@
 	/ pages
 	</nav>
 	<article class="main">
+	<label>Pages</label>
 	<table rowspan="" width="100%">
 	<?php 
 	for($i=0;$i<count($result);$i++){
