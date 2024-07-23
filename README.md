@@ -1,5 +1,5 @@
-# Plain UI
-Plain UI is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through a RESTful API.
+# Luxa
+Luxa is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through a RESTful API.
 
 <img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/screen.png" />
 
@@ -23,7 +23,7 @@ Possible outputs:
 
    Example: https://localhost/CMS/API.php?filetype=unique&id=1
    will fetch the index.html and increments the fields in JSON format.
-   (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in PlainUI.) 
+   (Note that all HTMLentities are encoded, and can be decoded by JavaScript as HTML is allowed in Luxa.) 
    
 # Uses
 It could be used with a JavaScript framework like VUE.js, React or UX.js, which also accepts JSON data objects:
