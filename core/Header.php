@@ -5,7 +5,6 @@
 	header("Referrer-Policy: same-origin");
  
 	session_start(); 
-	session_regenerate_id();
 	
 	include("../resources/PHP/Class.DB.php");
 	include("Cryptography.php");
@@ -17,6 +16,16 @@
 		exit;	
 	}
 	
+	if(!isset($_SESSION['ip'])) {
+		header("Location: ".SITE."login/");
+		exit;	
+	}
+	
+	if($_SESSION['ip'] != $_SERVER['REMOTE_ADDR']) {
+		header("Location: ".SITE."login/");
+		exit;	
+	}	
+	
 	if($_SESSION['loggedin'] != '1') {
 		header("Location: ".SITE."login/");
 		exit;
@@ -27,7 +36,7 @@
 	
 	if(isset($_SESSION['token'])) {
 		$token = $_SESSION['token'];
-	} else {
+		} else {
 		$token = $cryptography->getToken();
 		$_SESSION['token'] = $token;
 	}
@@ -49,5 +58,5 @@
 	} else {
 		$token = $db->clean($_SESSION['uuid'],'encode');
 	}
-
+	session_commit();
 ?>

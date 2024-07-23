@@ -5,7 +5,7 @@
 	header("Referrer-Policy: same-origin");
  
 	session_start(); 
-	session_regenerate_id();
+	
 	require("../configuration.php");
 	include("../resources/PHP/Class.DB.php");
 	include("Cryptography.php");
@@ -74,7 +74,9 @@
 					$_SESSION['uid'] = $db->intcast($result[0]['id']);
 					$_SESSION['profile'] = $result[0];
 					$_SESSION['loggedin'] = '1';
+					$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 					session_regenerate_id();
+					session_commit();
 					 header("Location: ../index.php");
 					 exit;
 					} else {
