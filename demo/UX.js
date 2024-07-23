@@ -559,7 +559,8 @@ class UX {
     if(method == 'callback') {
       req.onreadystatechange = function() {
         if(req.readyState == 4 && req.status == 200) {
-          callback(req.responseText);
+		  let response = req.responseText;
+          callback(response);
         }
       }
       req.send();
