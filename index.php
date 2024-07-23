@@ -16,7 +16,7 @@
 		header("Location: ".SITE."login/");
 		exit;	
 	}
-	if(isset($_SESSION['loggedin']) != '1') {
+	if($_SESSION['loggedin'] != '1') {
 		header("Location: login/");
 		exit;
 	} 
