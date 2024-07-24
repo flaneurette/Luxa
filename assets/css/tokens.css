@@ -299,7 +299,7 @@ hr {
 		float: left;
 		display: block;
 		border-bottom: 1px solid var(--lightgrey);
-		margin-left: 230px;
+		margin-left: 12%;
 	}
 
 	.main {
@@ -308,7 +308,7 @@ hr {
 		float: left;
 		display: block;
 		margin-top: var(--spacing-large);
-		margin-left: 230px;
+		margin-left: 12%;
 	}
 
 	.header h1 {
