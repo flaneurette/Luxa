@@ -286,6 +286,8 @@ hr {
 		width: 12%;
 		float: left;
 		display: inline-block;
+		z-index: 1;
+		position: fixed;
 	}
 
 	.nav {
@@ -297,6 +299,7 @@ hr {
 		float: left;
 		display: block;
 		border-bottom: 1px solid var(--lightgrey);
+		margin-left: 230px;
 	}
 
 	.main {
@@ -305,6 +308,7 @@ hr {
 		float: left;
 		display: block;
 		margin-top: var(--spacing-large);
+		margin-left: 230px;
 	}
 
 	.header h1 {
