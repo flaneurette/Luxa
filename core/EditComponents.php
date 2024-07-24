@@ -66,9 +66,9 @@
 	<input type="hidden" name="count" id="count" value="<?php echo count($result);?>" />
 	<?php 
 	for($i=0;$i<count($result);$i++){
+		$image = $result[$i]["component_image"];
 		if($result[$i]["component_image"] !='') {
-			$image = str_replace('../','',$result[$i]["component_image"]);
-				if(!file_exists(str_replace(SITE,'',$image))) {
+				if(!file_exists(str_replace(SITE,'','../'.$image))) {
 					$image = "../../../resources/content/thumb.png";
 				}
 			} else {
