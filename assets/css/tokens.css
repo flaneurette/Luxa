@@ -135,10 +135,6 @@ input:focus {
 	outline: none;
 }
 
-input:selected {
-	outline: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family);
 	margin: 0em;
@@ -387,5 +383,15 @@ hr {
 		margin-top:  var(--spacing-xlarge);
 	}
 	table {
-		margin:  var(--spacing-xlarge);	
+		margin:  var(--spacing-xlarge);
+		border-collapse:collapse;		
+		padding-left:var(--spacing-xlarge);
+	}
+	table td {
+		padding:var(--spacing-xlarge);
+	}
+	
+	.component-image {
+		float:left; 
+		margin-left:30px;
 	}

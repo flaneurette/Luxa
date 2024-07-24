@@ -1,7 +1,7 @@
 <?php
 	require("../configuration.php");
 	include("Header.php");
-	$result = $db->query("SELECT * from pages ORDER BY id DESC"); 
+	$result = $db->query("SELECT * from pages ORDER BY id ASC"); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,12 @@
 	<label>API</label>
 	<table width="100%">
 	<?php 
-	for($i=0;$i<count($result);$i++){
+	for($i=0;$i<count($result);$i++){	
+		if($i % 2 !== 0) { 
+			$color = "background-color: var(--lightgrey);";
+			} else {
+			$color = "";
+		}
 	?>
 		<tr>
 		<td width="100"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['page_name'];?></a></td>

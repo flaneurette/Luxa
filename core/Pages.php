@@ -29,8 +29,13 @@
 	<table rowspan="" width="100%">
 	<?php 
 	for($i=0;$i<count($result);$i++){
+		if($i % 2 !== 0) { 
+			$color = "background-color: var(--lightgrey);";
+			} else {
+			$color = "";
+		}	
 	?>
-		<tr>
+		<tr style="<?php echo $color;?>">
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['page_name'];?></a></td>
 		<td><a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $db->intcast($result[$i]['id']);?>">API</a></td>
 		<td width="500"></td>

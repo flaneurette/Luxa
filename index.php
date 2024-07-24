@@ -78,8 +78,13 @@
 			} else {
 			$image = "resources/content/thumb.png";
 		}
+		if($i % 2 !== 0) { 
+			$color = "background-color: var(--lightgrey);";
+			} else {
+			$color = "";
+		}
 	?>
-		<tr>
+		<tr style="<?php echo $color;?>">
 		<td width="150"><img src="<?php echo $image;?>" width="100"/></td>
 		<td valign="top"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
 		<td valign="top"><a href="<?php echo SITE;?>API.php?filetype=unique&id=<?php echo $db->intcast($result[$i]['pid']);?>" target="_blank">API</a></td>
