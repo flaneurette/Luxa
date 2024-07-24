@@ -72,7 +72,7 @@
 		<h1><div name="" contentEditable="true" id="titleditor" oninput="plainui.proc('titleditor','component_title');">Title</div></h1>
 		<input type="hidden" name="component_title" id="component_title" value=""  />
 		<textarea id="component_text" name="component_text" class="textarea"></textarea>
-		<div name="component_text" contentEditable="true" name="post-message" class="texteditor" id="texteditor" oninput="plainui.proc('texteditor','component_text');" placeholder="Write...">Text...</div>
+		<div name="component_text" style="overflow-y:scroll;" contentEditable="true" name="post-message" class="texteditor" id="texteditor" oninput="plainui.proc('texteditor','component_text');" placeholder="Write...">Text...</div>
 		<label>Main image</label><input type="file" name="main_image[]" />
 	</form>
 	</article>
