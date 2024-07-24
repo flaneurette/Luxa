@@ -52,7 +52,7 @@
 <body>
 
 <div class="container">
-	<header class="header">
+	<header class="header" >
 	<?php include("Navigation.php");?>
 	</header>
 	<nav class="nav">
