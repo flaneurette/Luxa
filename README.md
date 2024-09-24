@@ -1,5 +1,5 @@
 # Luxa
-Luxa is a simple yet modern headless CMS, which outputs JSON, CSV or Array data through a RESTful API.
+Luxa is a simple yet modern headless CMS, which outputs JSON data through a RESTful API.
 
 <img src="https://github.com/flaneurette/Plain-UI/blob/main/assets/screen.png" />
 
