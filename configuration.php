@@ -1,7 +1,7 @@
 <?php
 
 // This must be defined.
-define('SITE','https://localhost/cms/'); 
+define('SITE','https://localhost/Luxa/'); 
 define('UPLOAD_DIR', '../resources/content/');
 define('CHARSET', 'utf8');
 define('HOST', 'localhost');

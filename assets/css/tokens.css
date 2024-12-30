@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-weight: 100;
 	font-size: var(--fontsize-xlarge);
-	margin-bottom: var(--spacing-xlarge);
+	margin-bottom: var(--spacing-large);
 }
 
 h2 {
@@ -208,7 +208,6 @@ hr {
 	margin: var(--spacing-large);
 	background-color: var(--blue);
 	color: var(--white);
-	font-weight: var(--fontweight-bold);
 }
 
 #dialog-success {
@@ -217,7 +216,6 @@ hr {
 	margin: var(--spacing-large);
 	background-color: var(--green);
 	color: var(--white);
-	font-weight: var(--fontweight-bold);
 }
 
 #dialog-alert {
@@ -317,8 +315,9 @@ hr {
 	}
 
 	ul.navigate {
-		list-style:none;
+		list-style: none;
 		margin: 0px;
+		margin-top: 30px;
 		padding: 0px;
 	}
 
@@ -343,6 +342,14 @@ hr {
 	}
 	
 	.texteditor {
+		border: 1px solid var(--lightgrey);
+		box-shadow: --shadow-large;
+		height: 200px;
+		outline: none;
+		padding: var(--spacing-xlarge);
+	}	
+	
+	.texteditor2 {
 		border: 1px solid var(--lightgrey);
 		box-shadow: --shadow-large;
 		height: 200px;
@@ -395,10 +402,38 @@ hr {
 		padding:var(--spacing-xlarge);
 	}
 	
+	.component-upload {
+		float: left;
+		clear: left;
+		margin: 0px;
+		margin-left: 30px;
+		display: block;
+		width: 247px;
+	}
+	
 	.component-image {
 		width: 262px;
 		height: 262px;
 		float:left; 
 		margin-left:30px;
 		object-fit: cover;
+	}
+	
+	.lightbox-item {
+		display:inline-block;
+		margin-left: 20px;
+	}
+	.lightbox-item img {
+		width: 200px;
+		height: 200px;
+		border-radius: 15px;
+		margin-left: 0px;
+	}
+	.lightbox-item span {
+		display: block;
+		text-align: center;
+	}
+	
+	.clearfix {
+		clear: both;
 	}

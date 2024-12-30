@@ -6,10 +6,20 @@
 		if($_POST['csrf'] === $_SESSION['uuid']) {
 			if(isset($_FILES['resource']) && !empty($_FILES['resource'])) {
 				foreach ($_FILES["resource"]["error"] as $key => $error) {
-					if ($error == UPLOAD_ERR_OK) {
-						$tmp_name = $_FILES["resource"]["tmp_name"][$key];
-						$name = basename($_FILES["resource"]["name"][$key]);
-						move_uploaded_file($tmp_name, UPLOAD_DIR. "/$name");
+					$name = basename($_FILES["resource"]["name"][$key]);
+					if(!empty($name)) {
+						if(stripos($name,'.png',-4) || stripos($name,'.jpg',-4) || stripos($name,'.gif',-4)) {	
+							if ($error == UPLOAD_ERR_OK) {
+								$tmp_name = $_FILES["resource"]["tmp_name"][$key];
+								move_uploaded_file($tmp_name, UPLOAD_DIR. "/$name");
+								$success = "File(s) uploaded, and are now available in the lightbox.";
+
+							} else {
+								$errors = "File could not be uploaded, make sure Luxa can write to ../resources/content/";
+							}
+						} else {
+							$errors = "File could not be uploaded, allowed filetypes: .png, .jpg, .gif";
+						}
 					}
 				}
 			}
@@ -32,6 +42,14 @@
 	/ index / add resources <input type="submit" onclick="plainui.post();" class="btn" value="add" />
 	</nav>
 	<article class="main">
+	<?php
+	if(isset($errors)) {
+		echo "<div id=\"dialog-alert\">".$errors."</div>";
+	}
+	if(isset($success)) {
+		echo "<div id=\"dialog-success\">".$success."</div>";
+	}
+	?>
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
 	<input type="file" id="files" name="resource[]"/>
 	<input type="file" id="files" name="resource[]"/>
@@ -41,20 +59,6 @@
 	<input type="file" id="files" name="resource[]"/>
 	</article>
 	</form>
-	<article class="main">
-	<table width="100%">
-	<?php 
-	
-	$dir   = UPLOAD_DIR;
-	$files = scandir($dir, SCANDIR_SORT_DESCENDING);
-	
-	for($i=0;$i<count($files);$i++) {
-		echo "<tr><td><a href=\"".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" target=\"_blank\">".$db->clean($files[$i],'encode')."</a><td></tr>";
-	}
-	
-	?>
-	</table>
-	</article>
 </div>
 </body>
 </html>

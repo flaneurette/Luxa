@@ -12,7 +12,9 @@
 	}
 	
 	if(isset($_POST['csrf'])) {
+		
 		if($_POST['csrf'] === $_SESSION['uuid']) {
+			
 			if(isset($_POST['count'])) { 
 				$len = $db->intcast($_POST['count']);
 				} else {
@@ -20,12 +22,32 @@
 			}
 			
 			for($i = 0; $i < $len; $i++) {
+			
+				$image = false;
+				if(isset($_FILES['resource_'.$i]) && !empty($_FILES['resource_'.$i])) {
+					$name = basename($_FILES['resource_'.$i]["name"]);
+					if(!empty($name)) {
+						if(stripos($name,'.png',-4) || stripos($name,'.jpg',-4) || stripos($name,'.gif',-4)) {						
+							if ($_FILES['resource_'.$i]['error'] == UPLOAD_ERR_OK) {
+								$tmp_name = $_FILES['resource_'.$i]["tmp_name"];
+								move_uploaded_file($tmp_name, UPLOAD_DIR. "/$name");
+								$image = $name;
+							}
+						}
+					}
+				}
+			
 				$id = $db->intcast($_POST['id'.$i]);
 				$component_title_vars = $_POST['component_title_' . $i];
 				$component_text_vars  = $_POST['component_text_' . $i];
 				$table    = 'components';
-				$columns  = ['component_title','component_text'];
-				$values   = [$component_title_vars,$component_text_vars];
+				if($image != false) { 
+					$columns  = ['component_title','component_text','component_image'];
+					$values   = [$component_title_vars,$component_text_vars,$image];
+					} else {
+					$columns  = ['component_title','component_text'];
+					$values   = [$component_title_vars,$component_text_vars];		
+				}
 				$db->update($table,$columns,$values,$id);
 			}
 		}
@@ -66,18 +88,13 @@
 	<input type="hidden" name="count" id="count" value="<?php echo count($result);?>" />
 	<?php 
 	for($i=0;$i<count($result);$i++){
-		$image = $result[$i]["component_image"];
-		if($result[$i]["component_image"] !='') {
-				if(!file_exists(str_replace(SITE,'','../'.$image))) {
-					$image = "../../../resources/content/thumb.png";
-				}
-			} else {
+		$image = "../../../resources/content/" . $result[$i]["component_image"];
+		if($result[$i]["component_image"] =='') {
 			$image = "../../../resources/content/thumb.png";
-		}
+		} 
 	?>
-		
-		<h1><div name="" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $db->clean($result[$i]['component_title'],'encode');?></div></h1>
-		<img src="<?php echo $image;?>" width="262" class="component-image"/><input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
+		<h1><div name="" class="clearfix" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $db->clean($result[$i]['component_title'],'encode');?></div></h1>
+		<img src="<?php echo $image;?>" width="262" class="component-image"/><input type="file" id="files" name="resource_<?php echo $i;?>" class="component-upload"/><input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
 		<textarea id="component_text_<?php echo $i;?>" name="component_text_<?php echo $i;?>" class="textarea"></textarea>
 		<input type="hidden" name="id<?php echo $i;?>" value="<?php echo $db->intcast($result[$i]['id']);?>"  />
 		<div name="component_text" style="overflow-y:scroll;" contentEditable="true" name="post-message" class="texteditor" id="texteditor-<?php echo $i;?>" oninput="plainui.proc('texteditor-<?php echo $i;?>','component_text_<?php echo $i;?>');" placeholder="Write..."><?php echo $result[$i]['component_text'];?></div>

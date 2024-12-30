@@ -4,6 +4,7 @@
 	<li><a href="<?php echo SITE;?>pages/add/">Add page</a></li>
 	<li><a href="<?php echo SITE;?>components/add/">Component</a></li>
 	<li><a href="<?php echo SITE;?>resources/">Resources</a></li>
+	<li><a href="<?php echo SITE;?>lightbox/">Lightbox</a></li>
 	<li><a href="<?php echo SITE;?>api/">API</a></li>
 	<li><a href="<?php echo SITE;?>settings/">Settings</a></li>
 	<li><a href="<?php echo SITE;?>logout/<?php echo $token;?>/">Exit</a></li>
