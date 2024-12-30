@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
-<title>UX HTTP</title>
+<title>Luxa UX.js demo</title>
 <style>
+
 .component {
 	display:block; 
 	clear:left; 
@@ -21,12 +21,11 @@ img {
 <body>
 
 <div id="app">
-<h1>UX DEMO</h1>
- <p>{{blogTitle}}</p>
+<h1>{{Title}}</h1>
   <div>
-    <div :loop="blogs">
+    <div :loop="Content">
 	<div class="component">
-		 <p><img src="{{component_image}}" /></p>
+		 <p><img src="../resources/content/{{component_image}}" width="300" :image="../resources/content/{{component_image}}"/></p>
 		  <h1>{{component_title}}</h1>
 		 <p>{{component_text}}</p>
 	 </div>
@@ -43,11 +42,12 @@ img {
 		let data = dataset.replaceAll('&gt;','>').replaceAll('&lt;','<');
 		app.load({
 			data: {
-				blogTitle: 'HTTP test',
-				blogs: JSON.parse(data)
+				Title: 'Luxa UX.js demo',
+				Content: JSON.parse(data)
 			}
 		});
 	}
+	
 	</script>
 </body>
 </html>

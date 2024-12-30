@@ -50,6 +50,7 @@
 		echo "<div id=\"dialog-success\">".$success."</div>";
 	}
 	?>
+	<table rowspan="" width="100%" class="table-list">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
 	<input type="file" id="files" name="resource[]"/>
 	<input type="file" id="files" name="resource[]"/>
@@ -57,6 +58,7 @@
 	<input type="file" id="files" name="resource[]"/>
 	<input type="file" id="files" name="resource[]"/>
 	<input type="file" id="files" name="resource[]"/>
+	</table>
 	</article>
 	</form>
 </div>

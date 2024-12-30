@@ -67,17 +67,15 @@
 	</nav>
 	<article class="main">
 	<label>Pages</label>
-	<table rowspan="" width="100%">
+	<table rowspan="" width="100%" class="table-list">
 	<?php 
+
 	for($i=0;$i<count($result);$i++){
-		if($result[$i]["component_image"] !='') {
-			$image = str_replace('../','',$result[$i]["component_image"]);
-				if(!file_exists(str_replace(SITE,'',$image))) {
-					$image = "resources/content/thumb.png";
-				}
-			} else {
+		$image = "resources/content/" . $result[$i]["component_image"];
+		if($result[$i]["component_image"] =='') {
 			$image = "resources/content/thumb.png";
-		}
+		} 
+		
 		if($i % 2 !== 0) { 
 			$color = "background-color: var(--lightgrey);";
 			} else {
@@ -88,8 +86,8 @@
 		<td width="150"><img src="<?php echo $image;?>" width="100"/></td>
 		<td valign="top"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/"><?php echo $result[$i]['component_title'];?></a></td>
 		<td valign="top"><a href="<?php echo SITE;?>API.php?filetype=unique&id=<?php echo $db->intcast($result[$i]['pid']);?>" target="_blank">API</a></td>
-		<td valign="top"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/">EDIT</a></td>
-		<td width="50"  valign="top"></td>
+		<td valign="top"></td>
+		<td width="50" valign="top"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['pid']);?>/">EDIT</a></td>
 		</tr>
 	<?php
 	}

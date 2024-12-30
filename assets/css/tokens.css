@@ -113,7 +113,6 @@ input[type="file"]::file-selector-button {
 
 input[type=button],input[type=submit],input[type=reset] {
 	width: var(--viewwidth-medium);
-	background-color: var(--lightgrey) !important;
 	border: 1px solid var(--grey) !important;
 	color: var(--black);
 	box-shadow: var(--shadow-medium);
@@ -124,11 +123,9 @@ input[type=button],input[type=submit],input[type=reset] {
 }
 
 input[type=button]:hover,input[type=submit]:hover  {
-	background-color: var(--grey);
 	color: var(--black);
 	border: 1px solid var(--grey);
 	width: 15em;
-	background-image: linear-gradient(180deg,var(--grey),var(--lightgrey)); 
 }
 
 input:focus {
@@ -437,3 +434,10 @@ hr {
 	.clearfix {
 		clear: both;
 	}
+	
+	.table-list {
+		background-color: #f7f7f7;
+		border-radius: 15px;
+		border: 1px solid var(--lightgrey);
+	}
+	

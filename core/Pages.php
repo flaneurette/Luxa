@@ -26,7 +26,7 @@
 	</nav>
 	<article class="main">
 	<label>Pages</label>
-	<table rowspan="" width="100%">
+	<table rowspan="" width="100%" class="table-list">
 	<?php 
 	for($i=0;$i<count($result);$i++){
 		if($i % 2 !== 0) { 
@@ -39,7 +39,7 @@
 		<td><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><?php echo $result[$i]['page_name'];?></a></td>
 		<td><a target="_blank" href="<?php echo SITE;?>API.php?id=<?php echo $db->intcast($result[$i]['id']);?>">API</a></td>
 		<td width="500"></td>
-		<td width="80"><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/">delete</a></td>
+		<td width="80"><a href="<?php echo SITE . 'pages/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/" onclick="return confirm('Are you sure you want to remove this item?');">delete</a></td>
 		</tr>
 	
 	<?php
