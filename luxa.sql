@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2024 at 04:47 PM
+-- Generation Time: Dec 30, 2024 at 08:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,10 +40,11 @@ CREATE TABLE `components` (
 --
 
 INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `component_image`) VALUES
-(1, 1, 'This is a snippet title', 'This is a snippet text', ''),
-(2, 1, 'This is a another snippet title', 'This is a another snippet text', 'https://localhost/cms/resources/content/thumb.png'),
-(6, 2, 'We are X, Y Z!', 'We are X, Y Z!', 'https://localhost/cms/resources/content/thumb.png'),
-(7, 3, 'Contact Us', 'By e-mail, telephone or SMS...<div><br></div><div>&lt;a href=\"#\"&gt;test&lt;/a&gt;</div>', 'https://localhost/cms/resources/content/thumb.png');
+(1, 1, 'Lorem Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'thumb.png'),
+(2, 1, 'Lorem Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'thumb.png'),
+(3, 1, 'Lorem Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'thumb.png'),
+(4, 1, 'Lorem Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', ''),
+(5, 1, 'Footer', 'Copyright © mywebsite.com', '');
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `page_name`, `sub`) VALUES
-(1, 'Index.html', 0),
-(3, 'Contact.html', 0);
+(1, '/index/', 0);
 
 -- --------------------------------------------------------
 
@@ -116,13 +116,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
