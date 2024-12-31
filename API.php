@@ -11,8 +11,15 @@
 	
 	$db = new sql();
 		
-	if(isset($_REQUEST['id'])) { 
+	if(!empty($_REQUEST['id']) >=1) { 
 		$pageid 	=  $db->intcast($_REQUEST['id']);
+		$table    	= 'components';
+		$column   	= 'id';
+		$value    	=  $pageid;
+		$operator 	= '*';
+		$result 	= $db->select($table,$operator,$column,$value);
+	} else if(!empty($_REQUEST['catid']) >=1) { 
+		$pageid 	=  $db->intcast($_REQUEST['catid']);
 		$table    	= 'components';
 		$column   	= 'pid';
 		$value    	=  $pageid;
