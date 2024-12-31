@@ -29,6 +29,9 @@
 	/ index / lightbox 
 	</nav>
 	<article class="main">
+	<label>Lightbox</label>
+	<table rowspan="" width="100%" class="table-list">
+	<tr><td>
 	<?php 
 	
 	$dir   = UPLOAD_DIR;
@@ -48,11 +51,13 @@
 		echo "<a href=\"".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" target=\"_blank\">";
 		echo "<img class=\"component-image\" src=\"".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" />";
 		echo "</a>";
-		echo "<span><a href=\"?csrf=".$token."&file=".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" onclick=\"return confirm('Are you sure you want to remove this item?');\">remove</a></span>";
+		echo "<span><a href=\"?csrf=".$token."&file=".UPLOAD_DIR.$db->clean($files[$i],'encode')."\" onclick=\"return confirm('Are you sure you want to remove this item?');\"><span class=\"material-symbols-outlined\" id=\"material-icon-reset\">delete</span></a></span>";
 		echo "</div>";
 	}
 	
 	?>
+	</td></tr>
+	</table>
 	</article>
 </div>
 </body>

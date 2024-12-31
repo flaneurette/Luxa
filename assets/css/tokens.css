@@ -41,7 +41,7 @@
 	--spacing-xlarge: 30px;
 	
 	--shadow-small: 0 1px 1px 0 rgba(0,0,0,0.12), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
-	--shadow-medium: 0 3px 4px 0 rgba(0,0,0,0.12), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+	--shadow-medium: 0 3px 4px 0 rgba(0,0,0,0.12), 0 2px 2px -2px rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.20);
 	--shadow-large: 0 6px 10px 0 rgba(0,0,0,0.12), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
 	
 	--viewwidth-small: 10vw;
@@ -158,6 +158,7 @@ hr {
 	height: 1px;
 	color: var(--grey);
 	background-color: var(--lightgrey); 
+	width: 100%;
 }
 
 .submit {
@@ -326,12 +327,17 @@ hr {
 	
 	ul.navigate li a {
 		text-decoration: none;
-		color: #666;
+		color: var(--grey);
 	}
 
+	ul.navigate li a:hover {
+		text-decoration: none;
+		color: #000;
+	}
+	
 	a:link, a:visited {
 		text-decoration: none;
-		color: #666;	
+		color: var(--grey);	
 	}
 	
 	a:hover {
@@ -441,3 +447,7 @@ hr {
 		border: 1px solid var(--lightgrey);
 	}
 	
+	#material-icon-reset { 
+		display: inline-block;
+	}
+  

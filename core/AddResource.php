@@ -42,6 +42,7 @@
 	/ index / add resources <input type="submit" onclick="plainui.post();" class="btn" value="add" />
 	</nav>
 	<article class="main">
+	<label>Resources</label>
 	<?php
 	if(isset($errors)) {
 		echo "<div id=\"dialog-alert\">".$errors."</div>";
@@ -52,12 +53,12 @@
 	?>
 	<table rowspan="" width="100%" class="table-list">
 	<input type="hidden" name="csrf" value="<?php echo $token;?>" />
-	<input type="file" id="files" name="resource[]"/>
-	<input type="file" id="files" name="resource[]"/>
-	<input type="file" id="files" name="resource[]"/>
-	<input type="file" id="files" name="resource[]"/>
-	<input type="file" id="files" name="resource[]"/>
-	<input type="file" id="files" name="resource[]"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
+	<input type="file" id="files" name="resource[]" accept=".png,.jpg,.gif"/>
 	</table>
 	</article>
 	</form>

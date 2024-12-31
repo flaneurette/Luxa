@@ -94,7 +94,7 @@
 		} 
 	?>
 		<h1><div name="" class="clearfix" contentEditable="true" id="titleditor-<?php echo $i;?>" oninput="plainui.proc('titleditor-<?php echo $i;?>','component_title_<?php echo $i;?>');"><?php echo $db->clean($result[$i]['component_title'],'encode');?></div></h1>
-		<img src="<?php echo $image;?>" width="262" class="component-image"/><input type="file" id="files" name="resource_<?php echo $i;?>" class="component-upload"/><input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
+		<img src="<?php echo $image;?>" width="262" class="component-image"/><input type="file" id="files" name="resource_<?php echo $i;?>" class="component-upload" accept=".png,.jpg,.gif"/><input type="hidden" name="component_title_<?php echo $i;?>" id="component_title_<?php echo $i;?>" value="<?php echo $result[$i]['component_title'];?>"  />
 		<textarea id="component_text_<?php echo $i;?>" name="component_text_<?php echo $i;?>" class="textarea"></textarea>
 		<input type="hidden" name="id<?php echo $i;?>" value="<?php echo $db->intcast($result[$i]['id']);?>"  />
 		<div name="component_text" style="overflow-y:scroll;" contentEditable="true" name="post-message" class="texteditor" id="texteditor-<?php echo $i;?>" oninput="plainui.proc('texteditor-<?php echo $i;?>','component_text_<?php echo $i;?>');" placeholder="Write..."><?php echo $result[$i]['component_text'];?></div>

@@ -88,7 +88,7 @@
 		<input type="hidden" name="component_title" id="component_title" value=""  />
 		<textarea id="component_text" name="component_text" class="textarea"></textarea>
 		<div name="component_text" style="overflow-y:scroll;" contentEditable="true" name="post-message" class="texteditor2" id="texteditor" oninput="plainui.proc('texteditor','component_text');" placeholder="Write...">Text...</div>
-		<label>Main image</label><input type="file" name="main_image[]" />
+		<label>Main image</label><input type="file" name="main_image[]" accept=".png,.jpg,.gif"/>
 	</form>
 	</article>
 </div>
