@@ -4,7 +4,7 @@
 
 	if(isset($_REQUEST['delete'])) {
 		if($_SESSION['uuid'] === $_REQUEST['csrf']) {			
-			$result = $db->delete('pages',$_REQUEST['delete']);
+			$result = $db->delete('pages',$db->intcast($_REQUEST['delete']));
 		}
 	}
 	

@@ -48,8 +48,16 @@
 	} else {
 		$token = $_SESSION['uuid'];
 	}
-	$result = $db->query("SELECT * FROM components");
 	
+	if(isset($_REQUEST['delete'])) {
+		if($_SESSION['uuid'] === $_REQUEST['csrf']) {			
+			$result = $db->delete('components',$db->intcast($_REQUEST['delete']));
+		}
+		header("Location: ../../../../index.php");
+		exit;
+	}
+	
+	$result = $db->query("SELECT * FROM components");
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,6 +96,7 @@
 		<td valign="top"><a href="<?php echo SITE;?>API.php?filetype=unique&id=<?php echo $db->intcast($result[$i]['id']);?>" target="_blank"><span class="material-symbols-outlined">database</span></a></td>
 		<td valign="top"></td>
 		<td width="50" valign="top"><a href="<?php echo SITE;?>components/edit/<?php echo $db->intcast($result[$i]['id']);?>/"><span class="material-symbols-outlined">edit</span></a></td>
+		<td width="50" valign="top"><a href="<?php echo SITE . 'components/'.$token;?>/delete/<?php echo $db->intcast($result[$i]['id']);?>/" onclick="return confirm('Are you sure you want to remove this component?');"><span class="material-symbols-outlined">delete</span></a></td>
 		</tr>
 	<?php
 	}
