@@ -40,7 +40,7 @@ CREATE TABLE `components` (
 --
 
 INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `component_image`) VALUES
-(1, 3, 'This is a component', 'This is a component text.', 'thumb.png');
+(1, 1, 'This is a component', 'This is a component text.', 'thumb.png');
 
 -- --------------------------------------------------------
 
