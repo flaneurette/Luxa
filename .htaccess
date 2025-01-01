@@ -12,6 +12,7 @@ RewriteRule ^pages/([a-z-0-9]+)/delete/([0-9]+)/$ core/Pages.php?csrf=$1&delete=
 RewriteRule ^pages/$ core/Pages.php [NC,L]
 RewriteRule ^pages/add/$ core/AddPage.php [NC,L]
 RewriteRule ^components/add/$ core/AddComponents.php [NC,L]
+RewriteRule ^components/([a-z-0-9]+)/delete/([0-9]+)/$ index.php?csrf=$1&delete=$2 [NC,L]
 RewriteRule ^resources/$ core/AddResource.php [NC,L]
 RewriteRule ^pages/edit/([0-9]+)/$ core/EditPages.php?pid=$1 [NC,L]
 RewriteRule ^components/edit/([0-9]+)/$ core/EditComponents.php?pid=$1 [NC,L]
