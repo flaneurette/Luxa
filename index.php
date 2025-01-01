@@ -74,7 +74,7 @@
 	/ index
 	</nav>
 	<article class="main">
-	<label>Pages</label>
+	<label>Components on pages</label>
 	<table rowspan="" width="100%" class="table-list">
 	<?php 
 
