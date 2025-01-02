@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2025 at 12:56 PM
+-- Generation Time: Jan 02, 2025 at 09:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `components` (
 --
 
 INSERT INTO `components` (`id`, `pid`, `component_title`, `component_text`, `component_image`) VALUES
-(1, 1, 'This is a component', 'This is a component text.', 'thumb.png');
+(1, 1, 'This is a component', 'This is a component text.', 'thumb.png'),
+(2, 2, 'Contact', 'Contact us via e-mail, chat, or telephone.', 'thumb.png');
 
 -- --------------------------------------------------------
 
@@ -52,6 +53,7 @@ CREATE TABLE `pages` (
   `id` int(11) NOT NULL,
   `page_name` varchar(255) NOT NULL,
   `sub` int(11) NOT NULL,
+  `ordering` int(11) NOT NULL,
   `meta_title` text NOT NULL,
   `meta_description` text NOT NULL,
   `meta_tags` text NOT NULL
@@ -61,8 +63,10 @@ CREATE TABLE `pages` (
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `page_name`, `sub`, `meta_title`, `meta_description`, `meta_tags`) VALUES
-(1, '/test/', 0, '', '', '');
+INSERT INTO `pages` (`id`, `page_name`, `sub`, `ordering`, `meta_title`, `meta_description`, `meta_tags`) VALUES
+(1, '/index/', 0, 1, 'test', 'this is a test', 'test, test'),
+(2, '/contact/', 0, 5, 'Contact us', 'Contact us', 'contact'),
+(3, '/about-us/', 0, 2, 'About us', 'About us', 'About us, who we are');
 
 -- --------------------------------------------------------
 
@@ -115,13 +119,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `components`
 --
 ALTER TABLE `components`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
