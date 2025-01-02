@@ -8,7 +8,7 @@
 		}
 	}
 	
-	$result = $db->query("SELECT * from pages ORDER BY id DESC"); 
+	$result = $db->query("SELECT * from pages ORDER BY ordering ASC"); 
 ?>
 <!DOCTYPE html>
 <html>
