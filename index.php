@@ -57,7 +57,7 @@
 		exit;
 	}
 	
-	$result = $db->query("SELECT * FROM components");
+	$result = $db->query("SELECT * FROM components order by id DESC");
 ?>
 <!DOCTYPE html>
 <html>
